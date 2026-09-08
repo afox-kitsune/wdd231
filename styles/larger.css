@@ -1,0 +1,75 @@
+@media (min-width: 768px) {
+    
+    header {
+        padding: var(--med-space) var(--large-space);
+    }
+
+    header span {
+        font-size: 1.65rem;
+    }
+
+    #menuButton {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--small-space);
+    }
+
+    nav a {
+        padding: var(--med-space) var(--large-space);
+    }
+
+    nav a.active {
+        border-left: none;
+        border-bottom: 4px solid var(--accent-color); 
+    }
+
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--large-space);
+        padding: var(--large-space) var(--med-space);
+    }
+
+    h1 {
+        grid-column: 1 / -1;
+    }
+
+    .about-me {
+        grid-column: 1 / 2;
+    }
+
+    .student-photo {
+        grid-column: 2 / 3;
+    }
+
+    .certificate-courses {
+        grid-column: 1 / -1;
+    }
+
+
+    .course-list {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .credit-total {
+        text-align: left;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-info {
+        border-top: none;
+        padding-top: 0;
+    }
+}

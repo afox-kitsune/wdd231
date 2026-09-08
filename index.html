@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/small.css">
+<link rel="stylesheet" href="styles/larger.css" media="(min-width: 760px)">
+
+<script src="scripts/navigation.js" defer></script>
+<script src="scripts/date.js" defer></script>
+<script src="scripts/course.js" defer></script>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" ;>
+    <title>Mesa Chamber of Commerce</title>
+    <meta name="description" content="Welcome to the Chamber of Commerce week 1 assingment home page">
+    <meta name="author" content="Alana Fox">
+
+</head>
+
+<body>
+    <header>
+        <object data="images/logo.svg" type="image/svg+xml" class="logo" aria-label="Site Logo"></object>
+        <span>Alana Fox</span>
+
+        \
+        <button id="menuButton" aria-label="Toggle Menu">&#9776;</button>
+    </header>
+    <nav>
+        <ul id="navigationMenu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="/chamber/index.html">Chamber</a></li>
+            <li><a href="/final/index.html">Final</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Home</h1>
+        <section class="about-me">
+            <h2>About Me</h2>
+            <p>My name is Alana Fox and I have lived in Mesa, Arizona all of my life. </p>
+
+        </section>
+        <section class="student-photo">
+            <h2>Student Photo</h2>
+            <img src="images/studentphoto.jpg" alt="Student Profile Picture" width="300" height="300">
+
+        </section>
+        <section class="certificate-courses">
+            <h2>Web Certificate Courses</h2>
+
+            <div class="course-certificates">
+                <button type="button">ALL</button>
+                <button type="button">CSE</button>
+                <button type="button">WDD</button>
+            </div>
+
+            <div class="course-list">
+                <div class="course-card">WDD 130</div>
+                <div class="course-card">WDD 131</div>
+                <div class="course-card">WDD 231</div>
+            </div>
+
+            <p class="credit-total">The total credits for course listed above is 6</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-social">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Account">
+                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub Repository">
+                <img src="images/github.svg" alt="GitHub Logo">
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram Page">
+                <img src="images/instagram.svg" alt="Instagram Logo">
+            </a>
+        </div>
+
+        <div class="footer-info">
+            &copy; <span id="currentyear"></span> | Alana Fox | Mesa, AZ
+        </div>
+
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").textContent = "Last Modification: " + document.lastModified;
+
+
+        const menuButton = document.getElementById('menuButton');
+        const navMenu = document.getElementById('navigationMenu');
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>
