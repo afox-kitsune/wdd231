@@ -1,22 +1,26 @@
-<link rel="stylesheet" href="styles/normalize.css">
-<link rel="stylesheet" href="styles/base.css">
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/larger.css" media="(min-width: 760px)">
-
-<script src="scripts/navigation.js" defer></script>
-<script src="scripts/date.js" defer></script>
-<script src="scripts/course.js" defer></script>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en"></html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" ;>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesa Chamber of Commerce</title>
     <meta name="description" content="Welcome to the Chamber of Commerce week 1 assingment home page">
     <meta name="author" content="Alana Fox">
 
 </head>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 760px)">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+
 
 <body>
     <header>
@@ -54,6 +58,7 @@
                 <button type="button">WDD</button>
             </div>
 
+            
             <div class="course-list">
                 <div class="course-card">WDD 130</div>
                 <div class="course-card">WDD 131</div>
@@ -83,18 +88,7 @@
 
         <p id="lastModified"></p>
     </footer>
-    <script>
 
-        document.getElementById("currentyear").textContent = new Date().getFullYear();
-        document.getElementById("lastModified").textContent = "Last Modification: " + document.lastModified;
-
-
-        const menuButton = document.getElementById('menuButton');
-        const navMenu = document.getElementById('navigationMenu');
-        menuButton.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-        });
-    </script>
 </body>
 
 </html>

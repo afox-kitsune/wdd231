@@ -3,10 +3,10 @@
 :root {
 
     --primary-background: #eee6d4;
-    --secondary-background: #ae7557;
-    --primary-text: #41566b;
-    --secondary-text: #c96b4f;
-    --accent-color: #e4b39c;
+    --secondary-background: #6e3215;
+    --primary-text: #1b2d3d;
+    --secondary-text: #8e391b;
+    --accent-color: #fca311;
 
 
     --font-sans: 'Sukar', system-ui, -apple-system, sans-serif;
@@ -34,7 +34,9 @@ body {
     overflow-x: hidden;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     color: var(--accent-color);
     font-weight: 700;
 }
@@ -157,13 +159,13 @@ section {
 }
 
 
-.course-filters {
+.course- {
     display: flex;
     gap: var(--small-space);
     margin-bottom: var(--med-space);
 }
 
-.course-filters button {
+.course-certificates button {
     font-family: var(--font-sans);
     background-color: var(--accent-color);
     border: 1px solid var(--secondary-background);
@@ -174,7 +176,7 @@ section {
     transition: all 0.2s ease;
 }
 
-.course-filters button:hover {
+.course-certificates button:hover {
     background-color: var(--secondary-text);
     color: var(--secondary-background);
 }
@@ -267,7 +269,7 @@ footer {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto auto;
-        gap: var(----large-space);
+        gap: var(--large-space);
     }
 
     h1 {

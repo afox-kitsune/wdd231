@@ -1,5 +1,5 @@
-const menuButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
+const menuButton = document.getElementById('menubutton');
+const navMenu = document.getElementById('navigationMenu');
 
 if (menuButton && navigation) {
     menuButton.addEventListener('click', () => {
