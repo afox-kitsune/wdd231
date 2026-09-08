@@ -1,7 +1,4 @@
-@import url('https://googleapis.com');
-
-:root {
-
+css:root {
     --primary-background: #eee6d4;
     --secondary-background: #6e3215;
     --primary-text: #1b2d3d;
@@ -11,6 +8,7 @@
     --secondary-accent-color: #dcc1a3;
 
 
+    --text-nav-light: #f4ece1;
 
     --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
 
@@ -37,6 +35,7 @@ body {
     overflow-x: hidden;
 }
 
+
 h1,
 h2,
 h3 {
@@ -54,9 +53,7 @@ h1 {
 h2 {
     font-size: 1.4rem;
     margin-bottom: var(--small-space);
-    color: var(--accent-color);
 }
-
 
 header {
     background-color: var(--primary-background);
@@ -71,7 +68,7 @@ header {
 
 header span {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: -0.5px;
 }
 
@@ -83,13 +80,12 @@ header span {
 #menuButton {
     background: none;
     border: none;
-    color: var(#ebdcb0);
+    color: var(--secondary-background);
     font-size: 1.75rem;
     cursor: pointer;
     padding: var(--small-space);
     display: block;
 }
-
 
 nav {
     background-color: #00022e;
@@ -101,29 +97,27 @@ nav ul {
     flex-direction: column;
 }
 
-
 nav ul.open {
     display: flex;
 }
 
 nav a {
     display: block;
-    color: #805A40;
+    color: var(--text-nav-light);
     text-decoration: none;
     padding: var(--med-space);
     font-weight: 500;
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-
 nav a:hover {
-    color: var(--secondary-background);
+    color: var(--accent-color);
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-
 nav a.active {
-    color: var(--secondary-background);
+    color: var(--text-dark-background);
+    /* FIXED: White text on brown active tabs */
     background-color: var(--secondary-background);
     border-left: 4px solid var(--accent-color);
 }
@@ -148,6 +142,11 @@ section {
 }
 
 
+section h2,
+section h3 {
+    color: var(--accent-color);
+}
+
 .student-photo {
     display: flex;
     justify-content: center;
@@ -169,6 +168,11 @@ section {
     margin-bottom: var(--med-space);
 }
 
+.course-certificates {
+    display: flex;
+    gap: 10px;
+}
+
 .course-certificates button {
     font-family: var(--font-sans);
     color: #000000;
@@ -177,14 +181,14 @@ section {
     padding: var(--small-space) var(--med-space);
     border-radius: var(--radius);
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
     transition: all 0.2s ease;
     flex: 1;
 }
 
 .course-certificates button:hover {
-    background-color: var(--secondary-text);
-    color: var(--secondary-background);
+    background-color: var(--secondary-background);
+    color: var(--text-dark-background);
 }
 
 .course-list {
@@ -196,11 +200,18 @@ section {
 
 .course-card {
     background-color: #eedec5;
+    color: var(--primary-text);
     border-left: 4px solid var(--secondary-background);
     padding: var(--med-space);
     text-align: center;
     font-weight: 700;
     border-radius: 4px;
+}
+
+
+.course-card.completed {
+    background-color: var(--secondary-accent-color);
+    border-left: 4px solid var(--secondary-text);
 }
 
 .credit-total {
@@ -236,7 +247,7 @@ footer {
 }
 
 .footer-social a:hover {
-    color: var(--secondary-background);
+    color: var(--accent-color);
 }
 
 .footer-info {
@@ -250,8 +261,8 @@ footer {
     color: #a3a6ad;
 }
 
-@media (min-width: 768px) {
 
+@media (min-width: 768px) {
     #menuButton {
         display: none;
     }
@@ -268,9 +279,8 @@ footer {
 
     nav a.active {
         border-left: none;
-        border-bottom: 4px solid var(--secondary-background);
+        border-bottom: 4px solid var(--accent-color);
     }
-
 
     main {
         display: grid;
@@ -294,9 +304,4 @@ footer {
     .certificate-courses {
         grid-column: 1 / -1;
     }
-}
-
-.course-certificates {
-    display: flex;
-    gap: 10px;
 }
