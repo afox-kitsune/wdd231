@@ -77,3 +77,69 @@ const courses = [
         completed: false
     }
 ]
+const wddButton = document.getElementById('wdd');
+const cseButton = document.getElementById('cse');
+const allButton = document.getElementById('all');
+
+const list = document.getElementById('course-cert');
+
+const course_popup = document.getElementById('course-details');
+const course_button = document.getElementById('details-closed');
+
+wddButton.addEventListener('click', () => { showCourses(courses.filter(courseName => courseName.subject == "WDD")) });
+
+cseButton.addEventListener('click', () => { showCourses(courses.filter(courseName => courseName.subject == "CSE")) });
+
+allButton.addEventListener('click', () => { showCourses(courses) });
+
+function displayCourseDetails(course) {
+    course_popup.innerHTML = '';
+    course_popup.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificates</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    course_popup.showModal();
+
+    closeModal.addEventListener("click", () => {
+        course_popup.close();
+    })
+}
+
+function showCourses(filteredCourses) {
+    document.getElementById('course-cert').innerHTML = "";
+    document.getElementById('course-listed').innerHTML = "";
+    let creditTotal = 0;
+
+    filteredCourses.forEach(courseName => {
+        let block = document.createElement("li");
+
+        let name = document.createElement("p");
+        if (courseName.completed == true) {
+            name.textContent = `✔ ${courseName.subject} ${courseName.number}`;
+        }
+        else {
+            name.textContent = `${courseName.subject} ${courseName.number}`;
+        }
+        //creditTotal = creditTotal + courseName.credits; this worked esaily, but then I had to "reduce"... great.
+        creditTotal = filteredCourses.reduce((p, c) => {
+            return p + c.credits;
+        }, 0);
+
+        block.addEventListener('click', () => { displayCourseDetails(courseName); }); // this requires the block variable, NOT list
+
+        block.appendChild(name);
+        document.getElementById('course-cert').appendChild(block)
+
+
+    })
+
+    document.getElementById('course-listed').innerHTML = `Total credits for courses listed below is ${creditTotal}`;
+};
+
+
+showCourses(courses);

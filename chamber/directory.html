@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Chamber of Commerce directory page for WDD 231">
+    <meta name="author" content="Alana Fox">
+
+    <meta property="og:title" content="Directory | Chamber of Commerce">
+    <meta property="og:description" content="Chamber of Commerce directory page for WDD 231 front-end-dev">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/chamber/images/Screenshot-directory.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/chamber/directory.html">
+
+    <link rel="icon" href="favicon.ico">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script type="module" src="scripts/dates.mjs" defer></script>
+
+
+
+    <title>Directory | Mesa Chamber of Commerce</title>
+</head>
+
+<body class="light-mode">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="logo" width="35" height="35"> Mesa Chamber of
+                    Commerce</a>
+                <div class="toggles">
+                    <a href="index.html">Home</a>
+                    <a href="discover.html">Discover</a>
+                    <a href="#" class="active">Directory</a>
+                    <a href="join.html">Join</a>
+                    <button id="mode-toggle"><img src="images/twilight.png" alt="light/dark-toggle"></button>
+                    <button aria-label="Menu" id="menu"></button>
+                </div>
+            </div>
+            <div class="bar">
+                <a href="index.html">Home</a>
+                <a href="discover.html">Discover</a>
+                <a href="#" class="active">Directory</a>
+                <a href="join.html">Join</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Directory</h1>
+        <button class="list-view">Toggle List View</button>
+        <div class="cards" id="compact"></div>
+    </main>
+    <footer>
+        <div id="footer-left">
+            <p>Mesa Chamber of Commerce</p>
+            <p>123 W Main Street</p>
+            <p>Mesa, AZ</p>
+            <p>Contact Us: ChamberofCommerce@mesa.com</p>
+            <p>480-123-4567 </p>
+            <div class="socialmedia">
+                <a href="https://www.instagram.com">
+                    <img src="images/instagram.svg" alt="Twitter/X" width="120" height="120" loading="lazy">
+                </a>
+                <a href="https://www.github.com">
+                    <img src="images/github.svg" alt="GitHub" width="120" height="120" loading="lazy">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/linkedin.svg" alt="Linkedin" width="120" height="120" loading="lazy">
+                </a>
+            </div>
+            <div id="footer-right">
+                <p>WDD231 Chamber Project</p>
+                <p>Alana Fox</p>
+                <p><span id="currentYear"></span> Mesa Chamber of Commerce</p>
+                <p></p><span id="lastModified"></span>
+            </div>
+
+    </footer>
+</body>
+
+</html>

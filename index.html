@@ -20,72 +20,85 @@
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
 
+    <link rel="icon" href="favicon.ico">
+
+
+    <meta property="og:title" content="Home | WDD-231 | Alana Fox">
+    <meta property="og:description" content="WDD 231 assignment to create a Chamber of Commerce site ">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/images/Screenshot.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/index.html">
+</head>
+
 </head>
 
 <body>
-    <header>
-        <object data="images/logo.svg" type="image/svg+xml" class="logo" aria-label="Site Logo"></object>
-        <span>Alana Fox</span>
 
-        \
-        <button id="menuButton" aria-label="Toggle Menu">&#9776;</button>
+    <header>
+
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="logo" width="35" height="35"></a>
+                <span>Alana Fox</span>
+            </div>
+            <button aria-label="Menu" id="menu"></button>
+            <div class="bar">
+                <a href="index.html" class="active">Home</a>
+                <a href="chamber/index.html">Chamber</a>
+                <a href="final/index.html">Final</a>
+            </div>
+        </nav>
+
     </header>
-    <nav>
-        <ul id="navigationMenu">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="/chamber/index.html">Chamber</a></li>
-            <li><a href="/final/index.html">Final</a></li>
-        </ul>
-    </nav>
+
     <main>
         <h1>Home</h1>
-        <section class="about-me">
-            <h2>About Me</h2>
-            <p>My name is Alana Fox and I have lived in Mesa, Arizona all of my life. </p>
+        <div class="flex-contain">
 
-        </section>
-        <section class="student-photo">
-            <h2>Student Photo</h2>
-            <img src="images/studentphoto.jpg" alt="Student Profile Picture" width="300" height="300">
+            <section class="about me">
+                <h2>About Me</h2>
+                <p>My name is Alana Fox and I have lived in Mesa, Arizona all of my life.</p>
+            </section>
 
-        </section>
-        <section class="certificate-courses">
+            <section class="studentphoto">
+                <h2>Student Photo</h2>
+                <img src="images/studentphoto.jpg" alt="Student's Photo" width="300" height="400">
+            </section>
+        </div>
+
+        <section class="certs">
             <h2>Web Certificate Courses</h2>
-
-            <div class="course-certificates">
-                <button type="button">ALL</button>
-                <button type="button">CSE</button>
-                <button type="button">WDD</button>
+            <div class="course-buttons">
+                <button id="all">
+                    All
+                </button>
+                <button id="wdd">
+                    WDD
+                </button>
+                <button id="cse">
+                    CSE
+                </button>
             </div>
-
-
-            <div class="course-list">
-                <div class="course-card">WDD 130</div>
-                <div class="course-card">WDD 131</div>
-                <div class="course-card">WDD 231</div>
-            </div>
-
-            <p class="credit-total">The total credits for course listed above is 6</p>
+            <ol id="course-cert"></ol>
+            <p id="course-listed"></p>
         </section>
+        <dialog id="course-details"></dialog>
     </main>
 
     <footer>
-        <div class="footer-social">
-            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Account">
-                <img src="images/linkedin.svg" alt="LinkedIn Logo">
+        <div class="socialmedia">
+            <a href="https://www.instagram.com">
+                <img src="images/instagram.svg" alt="Twitter/X" width="120" height="120">
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub Repository">
-                <img src="images/github.svg" alt="GitHub Logo">
+            <a href="https://www.github.com">
+                <img src="images/github.svg" alt="GitHub" width="120" height="120">
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram Page">
-                <img src="images/instagram.svg" alt="Instagram Logo">
+            <a href="https://www.linkedin.com">
+                <img src="images/linkedin.svg" alt="Linkedin" width="120" height="120">
             </a>
         </div>
-
-        <div class="footer-info">
-            &copy; <span id="currentyear"></span> | Alana Fox | Mesa, AZ
-        </div>
-
+        <p><span id="currentYear"></span>, Alana Fox, Arizona</p>
         <p id="lastModified"></p>
     </footer>
 
