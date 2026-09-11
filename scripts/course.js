@@ -125,13 +125,12 @@ function showCourses(filteredCourses) {
         else {
             name.textContent = `${courseName.subject} ${courseName.number}`;
         }
-        //creditTotal = creditTotal + courseName.credits; this worked esaily, but then I had to "reduce"... great.
+
         creditTotal = filteredCourses.reduce((p, c) => {
             return p + c.credits;
         }, 0);
 
-        block.addEventListener('click', () => { displayCourseDetails(courseName); }); // this requires the block variable, NOT list
-
+        block.addEventListener('click', () => { displayCourseDetails(courseName); });
         block.appendChild(name);
         document.getElementById('course-cert').appendChild(block)
 
