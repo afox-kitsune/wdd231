@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 8px;
+    /* Optional: adds space between cards */
+    padding: 16px;
+    /* Optional: adds space around the grid */
+    box-shadow: 0 0 30px gray;
+}
+
+footer {
+    text-align: center;
+}
