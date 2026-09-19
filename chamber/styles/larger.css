@@ -1,0 +1,81 @@
+@media (min-width: 600px) {
+
+    main {
+        padding: 2rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    nav .toggles {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        align-items: center;
+    }
+
+    nav .toggles a {
+        display: inline;
+        width: auto;
+        padding: 0;
+        margin-left: 1.5rem;
+        border-bottom: none;
+    }
+
+    #mode-toggle {
+        margin: 0 0 0 1.5rem;
+    }
+
+    .hero-banner {
+        height: 340px;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.75rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .list-view {
+        width: auto;
+        padding: 0.6rem 2rem;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .cards section {
+        padding: 1.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cards section:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cards section img {
+        max-width: 140px;
+        height: 80px;
+        margin-bottom: 1.25rem;
+    }
+
+    .cards section a {
+        margin-top: auto;
+    }
+}

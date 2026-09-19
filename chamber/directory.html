@@ -17,7 +17,6 @@
 
     <link rel="icon" href="favicon.ico">
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -27,9 +26,8 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
     <script type="module" src="scripts/dates.mjs" defer></script>
-
-
 
     <title>Directory | Mesa Chamber of Commerce</title>
 </head>
@@ -45,33 +43,36 @@
                     <a href="discover.html">Discover</a>
                     <a href="#" class="active">Directory</a>
                     <a href="join.html">Join</a>
-                    <button id="mode-toggle"><img src="images/twilight.png" alt="light/dark-toggle"></button>
+                    <button id="mode-toggle" aria-label="Toggle light and dark mode">🌵</button>
                     <button aria-label="Menu" id="menu"></button>
                 </div>
             </div>
-            <div class="bar">
-                <a href="index.html">Home</a>
-                <a href="discover.html">Discover</a>
-                <a href="#" class="active">Directory</a>
-                <a href="join.html">Join</a>
-            </div>
         </nav>
     </header>
+
     <main>
-        <h1>Directory</h1>
+
+        <div class="hero-banner">
+            <img src="images/mesa-az.jpg" alt="Mesa Arizona Landscape Background Banner" class="banner-img">
+            <div class="hero-text">
+                <h1>Mesa Chamber Directory</h1>
+            </div>
+        </div>
+
         <button class="list-view">Toggle List View</button>
         <div class="cards" id="compact"></div>
     </main>
+
     <footer>
         <div id="footer-left">
             <p>Mesa Chamber of Commerce</p>
             <p>123 W Main Street</p>
             <p>Mesa, AZ</p>
             <p>Contact Us: ChamberofCommerce@mesa.com</p>
-            <p>480-123-4567 </p>
+            <p>480-123-4567</p>
             <div class="socialmedia">
                 <a href="https://www.instagram.com">
-                    <img src="images/instagram.svg" alt="Twitter/X" width="120" height="120" loading="lazy">
+                    <img src="images/instagram.svg" alt="instagram" width="120" height="120" loading="lazy">
                 </a>
                 <a href="https://www.github.com">
                     <img src="images/github.svg" alt="GitHub" width="120" height="120" loading="lazy">
@@ -80,14 +81,15 @@
                     <img src="images/linkedin.svg" alt="Linkedin" width="120" height="120" loading="lazy">
                 </a>
             </div>
-            <div id="footer-right">
-                <p>WDD231 Chamber Project</p>
-                <p>Alana Fox</p>
-                <p><span id="currentYear"></span> Mesa Chamber of Commerce</p>
-                <p></p><span id="lastModified"></span>
-            </div>
-
+        </div>
+        <div id="footer-right">
+            <p>WDD231 Chamber Project</p>
+            <p>Alana Fox</p>
+            <p><span id="currentYear"></span> Mesa Chamber of Commerce</p>
+            <p><span id="lastModified"></span></p>
+        </div>
     </footer>
+    <script src="scripts/date.js"></script>
 </body>
 
 </html>
