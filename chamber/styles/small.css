@@ -63,6 +63,7 @@ nav .toggles a.active {
     font-size: 1.2rem;
     cursor: pointer;
     vertical-align: middle;
+    color: #ffffff;
 }
 
 .hero-banner {
