@@ -143,8 +143,50 @@ nav .toggles a.active {
 .cards {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 16px;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cards section.business {
+    background-color: var(--secondary-accent-color);
+    border: 1px solid var(--primary-text);
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.cards section.business h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--primary-text);
+    width: 100%;
+}
+
+.cards section.business .info-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cards section.business img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cards section.business .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .cards section {
@@ -224,4 +266,60 @@ nav .toggles a.active {
 .cards.list section a {
     margin-top: 0;
     padding: 0;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px auto;
+}
+
+#calendar,
+#today,
+#three {
+    background-color: var(--primary-text);
+    color: var(--text-dark-background);
+    border: 5px solid var(--accent-color);
+    padding: 24px;
+    box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: var(--primary-text);
+    color: #ffffff;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+#footer-left,
+#footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.socialmedia img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1) brightness(2);
+}
+
+#weather-icon {
+    width: 40px;
+    height: 50px;
+    display: block;
 }

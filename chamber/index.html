@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Chamber of Commerce home page for WDD 231 assignment for BYU Pathway">
+    <meta name="author" content="Alana Fox">
+
+    <meta property="og:title" content="Index | Chamber of Commerce">
+    <meta property="og:description"
+        content="Chamber of Commerce directory page for WDD 231 assignment for BYU Pathway class">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/chamber/images/Screenshot-index.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/chamber/index.html">
+
+    <link rel="icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/chambers.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Home | U.S. Chamber of Commerce</title>
+</head>
+
+<body class="light-mode">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="logo" width="35" height="35"> Mesa Chamber of
+                    Commerce</a>
+                <div class="toggles">
+                    <a href="#" class="active">Home</a>
+                    <a href="index.html">Home</a>
+                    <a href="discover.html">Discover</a>
+                    <a href="directory.html">Directory</a>
+                    <a href="join.html">Join</a>
+                    <button id="mode-toggle" aria-label="Toggle light and dark mode">🌵</button>
+                    <button aria-label="Menu" id="menu"></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="home">
+        <div class="hero-banner">
+            <img src="images/mesa-az.jpg" alt="Mesa Arizona Landscape Background Banner" class="banner-img">
+            <div class="hero-text">
+                <h1>Mesa Chamber of Commerce</h1>
+            </div>
+        </div>
+        <div class="front">
+            <section id="calendar">
+                <h2>Events</h2>
+                <p>Gameday at the Mix Saturday</p>
+                <p>First Friday Museum and Galleries</p>
+                <p>Downtown Mesa Sunset Market</p>
+                <p>Skate Party @ The Plaza</p>
+                <p>Mesa Music Festival</p>
+            </section>
+            <section id="today">
+                <h2>Current Weather</h2>
+                <div id="weather">
+                    <img id="weather-icon" src="images/weather-icon.svg" alt="weather-icon">
+                    <div>
+                        <p><span id="current-temp"></span></p>
+                    </div>
+                </div>
+            </section>
+            <section id="three">
+                <h2>Weather Forecast</h2>
+                <div>
+                    <p><span id="forecast"></span></p>
+                </div>
+            </section>
+        </div>
+        <button class="list-view " id="disappear">Toggle List View</button>
+        <div class="cards"></div>
+    </main>
+    <footer>
+        <div id="footer-left">
+            <p>Mesa Chamber of Commerce</p>
+            <p>123 W Main Street</p>
+            <p>Mesa, AZ</p>
+            <p>Contact Us: ChamberofCommerce@mesa.com</p>
+            <p>480-123-4567</p>
+        </div>
+
+        <div class="socialmedia">
+            <a href="https://instagram.com">
+                <img src="images/instagram.svg" alt="instagram" loading="lazy">
+            </a>
+            <a href="https://github.com">
+                <img src="images/github.svg" alt="GitHub" loading="lazy">
+            </a>
+            <a href="https://linkedin.com">
+                <img src="images/linkedin.svg" alt="Linkedin" loading="lazy">
+            </a>
+        </div>
+
+        <div id="footer-right">
+            <p>WDD231 Chamber Project</p>
+            <p>Alana Fox</p>
+            <p><span id="currentYear"></span> 2026 Mesa Chamber of Commerce</p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+</html>
