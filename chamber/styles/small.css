@@ -455,11 +455,24 @@ form button[type="submit"] {
     flex-direction: column;
     justify-content: space-between;
     min-height: 160px;
+    opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out,
+        box-shadow 0.2s ease-in-out;
 }
 
+.badge.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.badge.in-view:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
 
 .badge p strong {
     font-size: 1.8rem;
@@ -468,12 +481,6 @@ form button[type="submit"] {
     margin: 0 0 20px 0;
     line-height: 1.2;
 }
-
-.badge.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 
 .openDetails {
     background: transparent;
@@ -509,6 +516,18 @@ form button[type="submit"] {
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.2s, border-color 0.2s;
     animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .list-view:hover,
@@ -548,7 +567,7 @@ dialog {
     color: #ffffff;
     padding: 30px;
     max-width: 450px;
-    width: 90%;
+    width: 90;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -588,16 +607,4 @@ dialog li {
     max-width: 600px;
     width: 100%;
     margin: 1.5rem 0;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
