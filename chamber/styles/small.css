@@ -498,6 +498,7 @@ form button[type="submit"] {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.2s, border-color 0.2s;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .list-view:hover,
@@ -577,4 +578,16 @@ dialog li {
     max-width: 600px;
     width: 100%;
     margin: 1.5rem 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -7,7 +7,7 @@ const myInfo = new URLSearchParams(window.location.search);
 
 
 document.querySelector('#results').innerHTML = `
-<p><strong>Application for ${myInfo.get('gname')} ${myInfo.get('fname')}</strong></p>
+<p><strong>Application for ${myInfo.get('fname')} ${myInfo.get('lname')}</strong></p>
 <p><strong>Your Title:</strong> ${myInfo.get('org-title')}</p> 
 <p><strong>Your Email:</strong> ${myInfo.get('email')}</p>
 <p><strong>Your Phone:</strong> ${myInfo.get('phone')}</p>
