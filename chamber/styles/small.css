@@ -455,6 +455,12 @@ form button[type="submit"] {
     flex-direction: column;
     justify-content: space-between;
     min-height: 160px;
+    transition: all 1s ease-in-out
+}
+
+.bade:hover {
+    transform: scale(1.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .badge p strong {
@@ -498,7 +504,7 @@ form button[type="submit"] {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.2s, border-color 0.2s;
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 2s ease-out forwards;
 }
 
 .list-view:hover,
