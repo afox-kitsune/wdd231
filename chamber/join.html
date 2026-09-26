@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Chamber of Commerce join page for WDD 231 assignment for BYU Pathway class">
+    <meta name="author" content="Alana Fox">
+
+    <meta property="og:title" content="Join | Chamber of Commerce">
+    <meta property="og:description"
+        content="Chamber of Commerce join page for WDD 231 assignment for BYU Pathway class">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/chamber/images/Screenshot-join.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/chamber/join.html">
+
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script type="module" src="scripts/observer.mjs"></script>
+    <script type="module" src="scripts/modal.mjs"></script>
+
+
+    <title>Join | Mesa Chamber of Commerce</title>
+</head>
+
+<body class="light-mode">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="logo" width="35" height="35"> Mesa Chamber of
+                    Commerce</a>
+                <div class="toggles">
+                    <a href="#" class="active">Join</a>
+                    <a href="index.html">Home</a>
+                    <a href="discover.html">Discover</a>
+                    <a href="directory.html">Directory</a>
+                    <a href="join.html">Join</a>
+                    <button id="mode-toggle" aria-label="Toggle light and dark mode">🌵</button>
+                    <button aria-label="Menu" id="menu"></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="home">
+        <div class="hero-banner">
+            <img src="images/mesa-az.jpg" alt="Mesa Arizona Landscape Background Banner" class="banner-img">
+            <div class="hero-text">
+                <h1>Mesa Chamber of Commerce Join Us</h1>
+            </div>
+        </div>
+
+    <main>
+        <h1>Join Us</h1>
+        <div class="join">
+            <form method="get" action="thankyou.html">
+                <fieldset>
+                    <h2>Applicant Information</h2>
+                    <p>Given Name</p>
+                    <label><input type="text" required name="gname" autocomplete="given-name" placeholder="first name"
+                            title="Your Given Name"></label>
+                    <p>Family Name</p>
+                    <label><input type="text" required name="fname" title="family name" autocomplete="family-name"
+                            placeholder="last name"></label>
+                    <p>Title</p>
+                    <label><input type="text" name="org-title" title="job title" pattern="[^@#$%&*0-9]{7,}"
+                            autocomplete="organization-title" placeholder="occupational-title"></label>
+                    <p>Email</p>
+                    <label><input type="email" required name="email" title="email address" autocomplete="email"
+                            placeholder="name@email.com"></label>
+                    <p>Phone Number</p>
+                    <label><input type="tel" required name="phone" title="phone number" autocomplete="tel"
+                            placeholder="000-123-4567"></label>
+                    <p>Business Name</p>
+                    <label><input type="text" required name="org-name" title="business name" autocomplete="organization"
+                            placeholder="business name"></label>
+
+                    <div class="rad-member">
+                        <h2>Membership Plan</h2>
+                        <label><input type="radio" name="membership" value="np-member" title="non profit membership">
+                            Non-Profit</label>
+                        <label><input type="radio" name="membership" value="bronze-member" title="bronze membership">
+                            Bronze</label>
+                        <label><input type="radio" name="membership" value="silver-member" title="silver membership">
+                            Silver</label>
+                        <label><input type="radio" name="membership" value="gold-member" title="gold membership">
+                            Gold</label>
+                    </div>
+
+                    <h2>Business Description</h2>
+                    <label><textarea name="occupation-desc" title="description"></textarea></label>
+                    <label><input type="hidden" name="date" id="hiddenDate"></label>
+
+                    <button type="submit">Enroll Membership</button>
+                </fieldset>
+
+            </form>
+
+            <div class="levels">
+                <h2>Membership Levels</h2>
+
+                <div class="badge np-card">
+                    <p><strong>Non-Profit</strong></p>
+                    <button class="openDetails" data-modal="npModal">Benefits</button>
+                    <dialog id="npModal">
+                        <h3>Non-Profit Membership</h3>
+                        <p>Membership level includes the following benefits:</p>
+                        <ul>
+                            <li>Access to events</li>
+                        </ul>
+                        <button class="closeModal">Close</button>
+                    </dialog>
+                </div>
+                <div class="badge Bronze-card">
+                    <p><strong>Bronze</strong></p>
+                    <button class="openDetails" data-modal="bronzeModal">Benefits</button>
+                    <dialog id="bronzeModal">
+                        <h3>Bronze Membership</h3>
+                        <p>Membership level includes the following benefits:</p>
+                        <ul>
+                            <li>Access to events</li>
+                            <li>Training Courses</li>
+                        </ul>
+                        <button class="closeModal">Close</button>
+                    </dialog>
+                </div>
+                <div class="badge Silver-card">
+                    <p><strong>Silver</strong></p>
+                    <button class="openDetails" data-modal="silverModal">Benefits</button>
+                    <dialog id="silverModal">
+                        <h3>Silver Membership</h3>
+                        <p>Membership level includes the following benefits:</p>
+                        <ul>
+                            <li>Access to events</li>
+                            <li>Training Courses</li>
+                            <li>Advertising on Chamber Home Page</li>
+                        </ul>
+                        <button class="closeModal">Close</button>
+                    </dialog>
+                </div>
+                <div class="badge Gold-card">
+                    <p><strong>Gold</strong></p>
+                    <button class="openDetails" data-modal="goldModal">Benefits</button>
+                    <dialog id="goldModal">
+                        <h3>Gold Membership</h3>
+                        <p>Membership level includes the following benefits:</p>
+                        <ul>
+                            <li>Access to events</li>
+                            <li>Training Courses</li>
+                            <li>Advertising on Chamber Home Page</li>
+                            <li>Discounts</li>
+                        </ul>
+                        <button class="closeModal">Close</button>
+                    </dialog>
+                </div>
+            </div>
+        </div>
+        <button class="list-view" id="disappear">Toggle List View</button>
+    </main>
+
+    <footer>
+        <div id="footer-left">
+            <p>Mesa Chamber of Commerce</p>
+            <p>123 W Main Street</p>
+            <p>Mesa, AZ</p>
+            <p>Contact Us: ChamberofCommerce@mesa.com</p>
+            <p>480-123-4567</p>
+            <div class="socialmedia">
+                <a href="https://www.instagram.com">
+                    <img src="images/instagram.svg" alt="instagram" width="120" height="120" loading="lazy">
+                </a>
+                <a href="https://www.github.com">
+                    <img src="images/github.svg" alt="GitHub" width="120" height="120" loading="lazy">
+                </a>
+                <a href="https://www.linkedin.com">
+                    <img src="images/linkedin.svg" alt="Linkedin" width="120" height="120" loading="lazy">
+                </a>
+            </div>
+        </div>
+        <div id="footer-right">
+            <p>WDD231 Chamber Project</p>
+            <p>Alana Fox</p>
+            <p><span id="currentYear"></span> Mesa Chamber of Commerce</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
