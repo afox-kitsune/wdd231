@@ -311,14 +311,12 @@ footer {
     display: block;
 }
 
-
 main h2 {
     color: #1e3142;
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
 }
-
 
 .join {
     display: flex;
@@ -333,15 +331,11 @@ main h2 {
         align-items: flex-start;
     }
 
-    form {
-        flex: 1;
-    }
-
+    form,
     .levels {
         flex: 1;
     }
 }
-
 
 form fieldset {
     background-color: var(--primary-text);
@@ -353,7 +347,7 @@ form fieldset {
 }
 
 form h2 {
-    color: #f29c2b;
+    color: var(--accent-color);
     font-size: 1.5rem;
     margin-top: 20px;
     margin-bottom: 15px;
@@ -368,7 +362,6 @@ form fieldset>p {
     font-size: 0.95rem;
     color: #e5d3b3;
 }
-
 
 form input[type="text"],
 form input[type="email"],
@@ -402,7 +395,6 @@ form textarea {
     resize: vertical;
 }
 
-
 .rad-member {
     margin-top: 25px;
 }
@@ -435,15 +427,10 @@ form button[type="submit"] {
     cursor: pointer;
     margin-top: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.2s;
-}
-
-form button[type="submit"]:hover {
-    background-color: var(--secondary-background);
 }
 
 .levels h2 {
-    color: #1e3142;
+    color: var(--primary-text);
     font-size: 1.8rem;
     margin-top: 0;
     margin-bottom: 20px;
@@ -494,6 +481,54 @@ form button[type="submit"]:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
+.list-view {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 85%;
+    max-width: 300px;
+    padding: 0.75rem 1rem;
+    background-color: var(--secondary-background);
+    color: var(--text-dark-background);
+    border: 2px solid var(--secondary-accent-color);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.list-view:hover,
+.list-view:focus {
+    background-color: var(--secondary-text);
+    border-color: var(--accent-color);
+}
+
+.levels.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.levels.list .badge {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    min-height: auto;
+}
+
+.levels.list .badge p strong {
+    margin-bottom: 0;
+}
+
+.levels.list .openDetails {
+    width: auto;
+    padding: 8px 25px;
+}
 
 dialog {
     background-color: var(--primary-text);
@@ -538,60 +573,8 @@ dialog li {
     float: right;
 }
 
-.list-view {
-    display: block;
-    margin: 0 auto 1.5rem auto;
-    width: 85%;
-    max-width: 300px;
-    padding: 0.75rem 1rem;
-    background-color: var(--secondary-background);
-    color: var(--text-dark-background);
-    border: 2px solid var(--secondary-accent-color);
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.list-view:hover,
-.list-view:focus {
-    background-color: var(--secondary-text);
-    border-color: var(--accent-color);
-}
-
-
-.levels.list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.levels.list .badge {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    min-height: auto;
-}
-
-.levels.list .badge p strong {
-    margin-bottom: 0;
-}
-
-.levels.list .openDetails {
-    width: auto;
-    padding: 8px 25px;
-}
-
-
 .thankyou {
     max-width: 600px;
     width: 100%;
     margin: 1.5rem 0;
-    ;
 }
