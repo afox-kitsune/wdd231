@@ -455,12 +455,8 @@ form button[type="submit"] {
     flex-direction: column;
     justify-content: space-between;
     min-height: 160px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition:
-        opacity 0.5s ease-out,
-        transform 0.5s ease-out,
-        box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s, border-color 0.2s;
+    animation: fadeInUp 2s ease-out forwards;
 }
 
 .badge.in-view {
