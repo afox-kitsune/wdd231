@@ -4,7 +4,7 @@ const revelations = {
             "name": "Arizona Museum of Natural History",
             "address": "53 N Macdonald, Mesa, AZ 85201",
             "description": "Natural History Museum that offers a wide variety of exhibits, including fossils, bones, minerals, and Native American artifacts. It is a fun and educational experience for all ages.",
-            "imageName": "images/natural.webp"
+            "imageName": "images/Natural.webp"
 
         },
         {

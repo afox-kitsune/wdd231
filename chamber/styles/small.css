@@ -40,7 +40,7 @@ nav .logo a {
     gap: 0.5rem;
 }
 
-/* Action Controls Layout Wrapper */
+
 nav .toggles {
     display: flex;
     align-items: center;
@@ -48,9 +48,18 @@ nav .toggles {
     position: relative;
 }
 
+#menu {
+    display: none;
+}
+
+#nav-links {
+    display: flex;
+    flex-direction: row;
+}
+
+
 @media (max-width: 767px) {
 
-    /* Hamburger Menu Button Configuration */
     #menu {
         display: flex;
         flex-direction: column;
@@ -74,7 +83,7 @@ nav .toggles {
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    /* Menu Toggle State Transformation Animations */
+
     #menu.open span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -87,10 +96,8 @@ nav .toggles {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* Absolute Dropdown Nav Menu Panel Layout */
     #nav-links {
         display: none;
-        /* FIXED: Removed !important so JS toggling works */
         flex-direction: column;
         position: absolute;
         top: 50px;
@@ -103,12 +110,10 @@ nav .toggles {
         z-index: 5;
     }
 
-    /* Activated Mobile Drawer Toggle Visibility State */
     #nav-links.open {
         display: flex;
     }
 
-    /* Individual Links Configuration Details */
     #nav-links a {
         display: block;
         color: var(--primary-text);
@@ -116,6 +121,8 @@ nav .toggles {
         font-weight: 600;
         font-size: 1rem;
         padding: 12px 20px;
+        width: 100%;
+        box-sizing: border-box;
         transition: background-color 0.2s;
     }
 
@@ -126,15 +133,8 @@ nav .toggles {
 
     #nav-links a.active {
         border-left: 4px solid var(--accent-color);
+        border-bottom: none;
         color: var(--secondary-text);
-    }
-
-    nav .toggles #nav-links a {
-        display: block;
-        padding: 12px 20px;
-        margin-right: 0;
-        width: 100%;
-        box-sizing: border-box;
     }
 }
 
@@ -187,7 +187,7 @@ nav .toggles {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Card Containers */
+
 .cards {
     display: flex;
     flex-direction: column;
@@ -203,7 +203,7 @@ nav .toggles {
     gap: 0.5rem;
 }
 
-/* Standard Generic Cards */
+
 .cards section {
     background-color: var(--text-dark-background);
     border: 1px solid var(--secondary-accent-color);
@@ -259,7 +259,6 @@ nav .toggles {
     border-bottom-color: var(--accent-color);
 }
 
-/* Specific Business Cards (Fixed Specificity Conflict) */
 .cards section.business {
     background-color: var(--secondary-accent-color);
     border: 1px solid var(--primary-text);
@@ -291,7 +290,7 @@ nav .toggles {
     object-fit: contain;
     flex-shrink: 0;
     margin-bottom: 0;
-    /* Cleared generic margin override */
+
 }
 
 .cards section.business .contacts {
@@ -300,7 +299,7 @@ nav .toggles {
     gap: 2px;
 }
 
-/* Active List-View Variations */
+
 .cards.list section {
     flex-direction: row;
     justify-content: space-between;
@@ -337,14 +336,14 @@ nav .toggles {
     box-sizing: border-box;
 }
 
-/* Typography elements */
+
 main h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
 }
 
-/* Call to Action Container Layout */
+
 main h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
@@ -358,7 +357,7 @@ main h2 {
     margin-bottom: 40px;
 }
 
-/* Structural Footer Layout */
+
 footer {
     background-color: var(--primary-text);
     color: #ffffff;
@@ -377,7 +376,7 @@ footer {
     align-items: center;
 }
 
-/* Social Icon Blocks */
+
 .socialmedia {
     display: flex;
     justify-content: center;
@@ -391,7 +390,7 @@ footer {
     filter: invert(1) brightness(2);
 }
 
-/* Weather Integration Styling */
+
 #weather-icon {
     width: 40px;
     height: 50px;
@@ -424,7 +423,7 @@ form fieldset>p {
     color: #e5d3b3;
 }
 
-/* Form Inputs, Textarea, and Focus Mechanics */
+
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
@@ -457,7 +456,7 @@ form textarea {
     resize: vertical;
 }
 
-/* Radio Button Controls */
+
 .rad-member {
     margin-top: 25px;
 }
@@ -477,7 +476,7 @@ form textarea {
     height: 18px;
 }
 
-/* Form Action Buttons */
+
 form button[type="submit"] {
     display: block;
     width: 100%;
@@ -493,7 +492,7 @@ form button[type="submit"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Membership Levels & Badge Grid Layouts */
+
 .levels h2 {
     color: var(--primary-text);
     font-size: 1.8rem;
@@ -542,7 +541,7 @@ form button[type="submit"] {
     line-height: 1.2;
 }
 
-/* Detail Modal/Accordion Buttons */
+
 .openDetails {
     background: transparent;
     color: #ffffff;
@@ -559,7 +558,6 @@ form button[type="submit"] {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* MEDIA QUERIES (Moved safely to the bottom to prevent layout cascade breaks) */
 @media (min-width: 900px) {
     .join {
         flex-direction: row;
@@ -584,7 +582,6 @@ form button[type="submit"] {
     }
 }
 
-/* List-View Toggle Button Component */
 .list-view {
     display: block;
     margin: 0 auto 1.5rem auto;
@@ -611,7 +608,6 @@ form button[type="submit"] {
     border-color: var(--accent-color);
 }
 
-/* Active Membership List Layout Overrides */
 .levels.list {
     display: flex;
     flex-direction: column;
@@ -636,7 +632,6 @@ form button[type="submit"] {
     padding: 8px 25px;
 }
 
-/* Native Dialog Element Blocks */
 dialog {
     background-color: var(--primary-text);
     border: 4px solid var(--accent-color);
@@ -669,7 +664,6 @@ dialog li {
     line-height: 1.4;
 }
 
-/* Modal Actions */
 .closeModal {
     float: right;
     background: var(--accent-color);
@@ -681,7 +675,6 @@ dialog li {
     cursor: pointer;
 }
 
-/* Form Submission Landing Layout */
 .thankyou {
     max-width: 600px;
     width: 100%;
@@ -694,7 +687,7 @@ dialog li {
     gap: 20px;
 }
 
-/* Card Component Layout */
+
 .discover-grid section {
     margin: 1rem 8px;
     border: 2px solid var(--secondary-background);
@@ -712,7 +705,7 @@ dialog li {
         "press";
 }
 
-/* Image & Media Elements */
+
 .discover-grid section figure {
     grid-area: birdsView;
     width: 100%;
@@ -728,7 +721,7 @@ dialog li {
     transition: transform 0.3s ease;
 }
 
-/* Content & Typography Elements */
+
 .discover-grid section h2 {
     grid-area: name;
     margin: 1rem 10px 0.5rem 10px;
@@ -748,7 +741,7 @@ dialog li {
     text-align: center;
 }
 
-/* Interactive Elements */
+
 .discover-grid section button {
     grid-area: press;
     width: 100%;
@@ -765,14 +758,62 @@ dialog li {
     background-color: var(--accent-color);
 }
 
-/* Miscellaneous Status Elements */
+
 #last-visit {
     text-align: center;
 }
 
-/* Responsive Interaction Styles */
+
 @media (min-width: 641px) {
     .discover-grid section figure:hover img {
         transform: scale(1.08);
     }
+}
+
+#cta-join {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--secondary-accent-color);
+    color: var(--primary-text);
+    margin: 40px auto 20px auto;
+    border-radius: 8px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#cta-join h2 {
+    color: var(--secondary-background);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#cta-join p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+
+#cta-join .cta-button {
+    display: inline-block;
+    background-color: var(--primary-text);
+    color: var(--text-dark-background);
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#cta-join .cta-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+#cta-join .cta-button:active {
+    transform: translateY(0);
 }

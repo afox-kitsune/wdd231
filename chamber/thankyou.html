@@ -30,22 +30,32 @@
 
 <body class="light-mode">
     <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" alt="logo" width="35" height="35"> Mesa Chamber of
-                    Commerce</a>
-                <div class="toggles">
-                    <a href="#" class="active">Join</a>
-                    <a href="index.html">Home</a>
-                    <a href="discover.html">Discover</a>
-                    <a href="directory.html">Directory</a>
-                    <a href="join.html">Join</a>
-                    <button id="mode-toggle" aria-label="Toggle light and dark mode">🌵</button>
-                    <button aria-label="Menu" id="menu"></button>
-                </div>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.svg" alt="Mesa Chamber of Commerce Logo" width="35" height="35"> 
+                Mesa Chamber of Commerce
+            </a>
+        </div>
+
+        <div class="toggles">
+            <div id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="discover.html">Discover</a>
+                <a href="join.html">Join</a>
+                <a href="#" class="active">Join</a>                
             </div>
-        </nav>
-    </header>
+            
+            <button id="mode-toggle" aria-label="Toggle light and dark mode">🌵</button>
+            
+            <button aria-label="Menu" id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+</header>
     <main class="home">
         <div class="hero-banner">
             <img src="images/mesa-az.jpg" alt="Mesa Arizona Landscape Background Banner" class="banner-img">
