@@ -1,4 +1,5 @@
-@media (min-width: 700px) {
+@media (min-width: 768px) {
+    /* Aligned media query to 768px across your whole ecosystem to fix the layout gap */
 
     main {
         padding: 2rem 1.5rem;
@@ -6,6 +7,7 @@
         margin: 0 auto;
     }
 
+    /* Hamburger Toggle Display Logic */
     #menu {
         display: none;
     }
@@ -29,10 +31,37 @@
         border-bottom: none;
     }
 
+    #nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    #nav-links a {
+        color: var(--text-dark-background);
+        padding: 10px 15px;
+    }
+
+    #nav-links a:hover {
+        background-color: transparent;
+        color: var(--accent-color);
+    }
+
+    #nav-links a.active {
+        border-left: none;
+        border-bottom: 3px solid var(--accent-color);
+        color: var(--text-dark-background);
+    }
+
     #mode-toggle {
         margin: 0 0 0 1.5rem;
     }
 
+    /* Hero Display Components */
     .hero-banner {
         height: 340px;
         margin-bottom: 2.5rem;
@@ -46,6 +75,7 @@
         font-size: 1.2rem;
     }
 
+    /* Layout Interaction Elements */
     .list-view {
         width: auto;
         padding: 0.6rem 2rem;
@@ -53,7 +83,7 @@
         margin-bottom: 2rem;
     }
 
-
+    /* Structural Grid Columns */
     .front {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -90,7 +120,7 @@
         font-size: 0.9rem;
     }
 
-
+    /* Business Directory Layout Blocks */
     .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -162,7 +192,7 @@
         color: var(--primary-text);
     }
 
-
+    /* Grid Footer Alignment Elements */
     footer {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
@@ -199,5 +229,53 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 2px;
+    }
+
+    /* Discover Directory Cards Layout */
+    .discover-grid {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+
+    .discover-grid section {
+        grid-template-columns: 150px 1fr 140px;
+        /* Fixed: Adjusted row tracks to explicitly map out 3 rows instead of 2 to match grid-template-areas */
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "birdsView name        press"
+            "birdsView location    press"
+            "birdsView description press";
+    }
+
+    .discover-grid section h2,
+    .discover-grid section address,
+    .discover-grid section p {
+        text-align: left;
+        padding: 0 15px;
+        margin: 8px 0;
+    }
+
+    .discover-grid section button {
+        height: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* 1. Hide the hamburger menu button on large screens */
+    #menu {
+        display: none;
+    }
+
+    /* 2. Force the navigation links to reappear horizontally */
+    #nav-links {
+        display: flex !important;
+        /* Overrides 'display: none' safely */
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+        z-index: initial;
     }
 }

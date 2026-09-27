@@ -16,64 +16,118 @@ body {
     padding: 0;
 }
 
-main {
-    background-color: var(--secondary-accent-color);
-    font-family: Arial, sans-serif;
-    padding: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-}
-
 header {
     background-color: var(--secondary-background);
-    padding: 1rem;
+    padding: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--secondary-background);
 }
 
 nav .logo a {
     color: var(--text-dark-background);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.75rem;
 }
 
-nav .toggles a {
-    color: var(--secondary-accent-color);
+/* Action Controls Layout Wrapper */
+nav .toggles {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+/* Hamburger Menu Button Configuration */
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    flex-shrink: 0;
+    /* Prevents text elements from squishing the button shape */
+    z-index: 10;
+}
+
+#menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-dark-background);
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Menu Toggle State Transformation Animations */
+#menu.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Absolute Dropdown Nav Menu Panel Layout */
+#nav-links {
+    display: none;
+    /* Keeps navigation words hidden on mobile devices */
+    flex-direction: column;
+    position: absolute;
+    /* Pulls links container completely out of normal document flow */
+    top: 50px;
+    /* Positions menu cleanly below your main header bar boundary */
+    right: 0;
+    background-color: var(--secondary-accent-color);
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+/* Activated Mobile Drawer Toggle Visibility State */
+#nav-links.open {
+    display: flex;
+}
+
+/* Individual Links Configuration Details */
+#nav-links a {
+    display: block;
+    color: var(--primary-text);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    margin-right: 0.75rem;
-    padding-bottom: 2px;
-    transition: color 0.2s ease;
+    font-size: 1rem;
+    padding: 12px 20px;
+    transition: background-color 0.2s;
 }
 
-nav .toggles a:hover,
-nav .toggles a:focus {
-    color: var(--accent-color);
+#nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--secondary-text);
 }
 
-nav .toggles a.active {
-    color: var(--text-dark-background);
-    border-bottom: 2px solid var(--accent-color);
-}
-
-#mode-toggle {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    vertical-align: middle;
-    color: #ffffff;
+#nav-links a.active {
+    border-left: 4px solid var(--accent-color);
+    color: var(--secondary-text);
 }
 
 .hero-banner {
@@ -125,8 +179,7 @@ nav .toggles a.active {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-
-
+/* Card Containers */
 .cards {
     display: flex;
     flex-direction: column;
@@ -136,46 +189,13 @@ nav .toggles a.active {
     box-sizing: border-box;
 }
 
-.cards section.business {
-    background-color: var(--secondary-accent-color);
-    border: 1px solid var(--primary-text);
-    border-radius: 4px;
-    padding: 16px;
+.cards.list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    gap: 0.5rem;
 }
 
-.cards section.business h2 {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-    padding-bottom: 4px;
-    border-bottom: 2px solid var(--primary-text);
-    width: 100%;
-}
-
-.cards section.business .info-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-}
-
-.cards section.business img {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.cards section.business .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
+/* Standard Generic Cards */
 .cards section {
     background-color: var(--text-dark-background);
     border: 1px solid var(--secondary-accent-color);
@@ -231,12 +251,48 @@ nav .toggles a.active {
     border-bottom-color: var(--accent-color);
 }
 
-.cards.list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+/* Specific Business Cards (Fixed Specificity Conflict) */
+.cards section.business {
+    background-color: var(--secondary-accent-color);
+    border: 1px solid var(--primary-text);
+    border-radius: 4px;
+    padding: 16px;
+    align-items: flex-start;
+    text-align: left;
 }
 
+.cards section.business h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--primary-text);
+    width: 100%;
+}
+
+.cards section.business .info-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cards section.business img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    /* Cleared generic margin override */
+}
+
+.cards section.business .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Active List-View Variations */
 .cards.list section {
     flex-direction: row;
     justify-content: space-between;
@@ -273,6 +329,28 @@ nav .toggles a.active {
     box-sizing: border-box;
 }
 
+/* Typography elements */
+main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Call to Action Container Layout */
+main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.join {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Structural Footer Layout */
 footer {
     background-color: var(--primary-text);
     color: #ffffff;
@@ -291,7 +369,7 @@ footer {
     align-items: center;
 }
 
-
+/* Social Icon Blocks */
 .socialmedia {
     display: flex;
     justify-content: center;
@@ -305,36 +383,11 @@ footer {
     filter: invert(1) brightness(2);
 }
 
+/* Weather Integration Styling */
 #weather-icon {
     width: 40px;
     height: 50px;
     display: block;
-}
-
-main h2 {
-    color: #1e3142;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.join {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-@media (min-width: 900px) {
-    .join {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    form,
-    .levels {
-        flex: 1;
-    }
 }
 
 form fieldset {
@@ -363,6 +416,7 @@ form fieldset>p {
     color: #e5d3b3;
 }
 
+/* Form Inputs, Textarea, and Focus Mechanics */
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
@@ -395,6 +449,7 @@ form textarea {
     resize: vertical;
 }
 
+/* Radio Button Controls */
 .rad-member {
     margin-top: 25px;
 }
@@ -414,6 +469,7 @@ form textarea {
     height: 18px;
 }
 
+/* Form Action Buttons */
 form button[type="submit"] {
     display: block;
     width: 100%;
@@ -429,6 +485,7 @@ form button[type="submit"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Membership Levels & Badge Grid Layouts */
 .levels h2 {
     color: var(--primary-text);
     font-size: 1.8rem;
@@ -455,7 +512,7 @@ form button[type="submit"] {
     flex-direction: column;
     justify-content: space-between;
     min-height: 160px;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     animation: fadeInUp 2s ease-out forwards;
 }
 
@@ -463,7 +520,6 @@ form button[type="submit"] {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 .badge.in-view:hover {
     transform: translateY(-5px);
@@ -478,6 +534,7 @@ form button[type="submit"] {
     line-height: 1.2;
 }
 
+/* Detail Modal/Accordion Buttons */
 .openDetails {
     background: transparent;
     color: #ffffff;
@@ -494,6 +551,32 @@ form button[type="submit"] {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* MEDIA QUERIES (Moved safely to the bottom to prevent layout cascade breaks) */
+@media (min-width: 900px) {
+    .join {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    form,
+    .levels {
+        flex: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* List-View Toggle Button Component */
 .list-view {
     display: block;
     margin: 0 auto 1.5rem auto;
@@ -514,24 +597,13 @@ form button[type="submit"] {
     animation: fadeInUp 2s ease-out forwards;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .list-view:hover,
 .list-view:focus {
     background-color: var(--secondary-text);
     border-color: var(--accent-color);
 }
 
+/* Active Membership List Layout Overrides */
 .levels.list {
     display: flex;
     flex-direction: column;
@@ -556,6 +628,7 @@ form button[type="submit"] {
     padding: 8px 25px;
 }
 
+/* Native Dialog Element Blocks */
 dialog {
     background-color: var(--primary-text);
     border: 4px solid var(--accent-color);
@@ -588,7 +661,9 @@ dialog li {
     line-height: 1.4;
 }
 
+/* Modal Actions */
 .closeModal {
+    float: right;
     background: var(--accent-color);
     color: var(--primary-text);
     border: none;
@@ -596,11 +671,100 @@ dialog li {
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
 }
 
+/* Form Submission Landing Layout */
 .thankyou {
     max-width: 600px;
     width: 100%;
     margin: 1.5rem 0;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Card Component Layout */
+.discover-grid section {
+    margin: 1rem 8px;
+    border: 2px solid var(--secondary-background);
+    background-color: var(--primary-background);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px auto auto 1fr 60px;
+    grid-template-areas:
+        "birdsView"
+        "name"
+        "location"
+        "description"
+        "press";
+}
+
+/* Image & Media Elements */
+.discover-grid section figure {
+    grid-area: birdsView;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.discover-grid section figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Content & Typography Elements */
+.discover-grid section h2 {
+    grid-area: name;
+    margin: 1rem 10px 0.5rem 10px;
+    text-align: center;
+}
+
+.discover-grid section address {
+    grid-area: location;
+    margin: 0.5rem 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+.discover-grid section p {
+    grid-area: description;
+    margin: 0.5rem 10px 1.5rem 10px;
+    text-align: center;
+}
+
+/* Interactive Elements */
+.discover-grid section button {
+    grid-area: press;
+    width: 100%;
+    height: 60px;
+    border: none;
+    background-color: var(--primary-text);
+    color: var(--text-dark-background);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.discover-grid section button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Miscellaneous Status Elements */
+#last-visit {
+    text-align: center;
+}
+
+/* Responsive Interaction Styles */
+@media (min-width: 641px) {
+    .discover-grid section figure:hover img {
+        transform: scale(1.08);
+    }
 }

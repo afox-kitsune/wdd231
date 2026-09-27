@@ -1,9 +1,9 @@
-const menuButton = document.getElementById('menubutton');
-const navMenu = document.getElementById('navigationMenu');
+const menuButton = document.getElementById('menu');
+const navMenu = document.getElementById('nav-links');
 
-if (menuButton && navigation) {
+if (menuButton && navMenu) {
     menuButton.addEventListener('click', () => {
-        navigation.classList.toggle('open');
+        navMenu.classList.toggle('open');
         menuButton.classList.toggle('open');
     });
 }
