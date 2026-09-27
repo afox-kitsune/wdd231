@@ -811,3 +811,7 @@ dialog li {
 #cta-join .cta-button:active {
     transform: translateY(0);
 }
+
+button#mode-toggle {
+    color: var(--text-dark-background);
+}
