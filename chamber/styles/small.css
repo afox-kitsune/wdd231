@@ -344,12 +344,6 @@ main h2 {
 }
 
 
-main h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
 .join {
     display: flex;
     flex-direction: column;
@@ -481,8 +475,8 @@ form button[type="submit"] {
     display: block;
     width: 100%;
     background-color: var(--secondary-background);
-    color: #ffffff;
-    border: 2px solid var(--secondary-text);
+    color: var(--text-dark-background);
+    border: none;
     padding: 14px;
     border-radius: 6px;
     font-size: 1.2rem;
