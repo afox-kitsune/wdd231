@@ -1,66 +1,3 @@
-@media (min-width: 768px) {
-    /* Aligned media query to 768px across your whole ecosystem to fix the layout gap */
-
-    main {
-        padding: 2rem 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* Hamburger Toggle Display Logic */
-    #menu {
-        display: none;
-    }
-
-    nav .toggles {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
-        align-items: center;
-    }
-
-    nav .toggles a {
-        display: inline;
-        width: auto;
-        padding: 0;
-        margin-left: 1.5rem;
-        border-bottom: none;
-    }
-
-    #nav-links {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    #nav-links a {
-        color: var(--text-dark-background);
-        padding: 10px 15px;
-    }
-
-    #nav-links a:hover {
-        background-color: transparent;
-        color: var(--accent-color);
-    }
-
-    #nav-links a.active {
-        border-left: none;
-        border-bottom: 3px solid var(--accent-color);
-        color: var(--text-dark-background);
-    }
-
-    #mode-toggle {
-        margin: 0 0 0 1.5rem;
-    }
-
     /* Hero Display Components */
     .hero-banner {
         height: 340px;
@@ -257,25 +194,68 @@
     .discover-grid section button {
         height: 100%;
     }
-}
+
 
 @media (min-width: 768px) {
+  main {
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    /* 1. Hide the hamburger menu button on large screens */
-    #menu {
-        display: none;
-    }
+  /* Hamburger Toggle Display Logic */
+  #menu {
+    display: none;
+  }
 
-    /* 2. Force the navigation links to reappear horizontally */
-    #nav-links {
-        display: flex !important;
-        /* Overrides 'display: none' safely */
-        flex-direction: row;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-        z-index: initial;
-    }
+  nav .toggles {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    align-items: center;
+  }
+
+  nav .toggles a {
+    display: inline;
+    width: auto;
+    padding: 0;
+    margin-left: 1.5rem;
+    border-bottom: none;
+  }
+
+  /* Force the navigation links to reappear horizontally on wide viewports */
+  #nav-links {
+    display: flex !important; /* Safely overrides mobile's display: none */
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    z-index: initial;
+  }
+
+  #nav-links a {
+    color: var(--text-dark-background);
+    padding: 10px 15px;
+  }
+
+  #nav-links a:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+  }
+
+  #nav-links a.active {
+    border-left: none;
+    border-bottom: 3px solid var(--accent-color);
+    color: var(--text-dark-background);
+  }
+
+  #mode-toggle {
+    margin: 0 0 0 1.5rem;
+  }
 }

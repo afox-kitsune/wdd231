@@ -48,86 +48,94 @@ nav .toggles {
     position: relative;
 }
 
-/* Hamburger Menu Button Configuration */
-#menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 20px;
-    flex-shrink: 0;
-    /* Prevents text elements from squishing the button shape */
-    z-index: 10;
-}
+@media (max-width: 767px) {
 
-#menu span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-dark-background);
-    border-radius: 3px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
+    /* Hamburger Menu Button Configuration */
+    #menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 20px;
+        flex-shrink: 0;
+        z-index: 10;
+    }
 
-/* Menu Toggle State Transformation Animations */
-#menu.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
+    #menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-dark-background);
+        border-radius: 3px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
-#menu.open span:nth-child(2) {
-    opacity: 0;
-}
+    /* Menu Toggle State Transformation Animations */
+    #menu.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
 
-#menu.open span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
+    #menu.open span:nth-child(2) {
+        opacity: 0;
+    }
 
-/* Absolute Dropdown Nav Menu Panel Layout */
-#nav-links {
-    display: none;
-    /* Keeps navigation words hidden on mobile devices */
-    flex-direction: column;
-    position: absolute;
-    /* Pulls links container completely out of normal document flow */
-    top: 50px;
-    /* Positions menu cleanly below your main header bar boundary */
-    right: 0;
-    background-color: var(--secondary-accent-color);
-    width: 200px;
-    padding: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 5;
-}
+    #menu.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 
-/* Activated Mobile Drawer Toggle Visibility State */
-#nav-links.open {
-    display: flex;
-}
+    /* Absolute Dropdown Nav Menu Panel Layout */
+    #nav-links {
+        display: none;
+        /* FIXED: Removed !important so JS toggling works */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: var(--secondary-accent-color);
+        width: 200px;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
 
-/* Individual Links Configuration Details */
-#nav-links a {
-    display: block;
-    color: var(--primary-text);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 12px 20px;
-    transition: background-color 0.2s;
-}
+    /* Activated Mobile Drawer Toggle Visibility State */
+    #nav-links.open {
+        display: flex;
+    }
 
-#nav-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: var(--secondary-text);
-}
+    /* Individual Links Configuration Details */
+    #nav-links a {
+        display: block;
+        color: var(--primary-text);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px 20px;
+        transition: background-color 0.2s;
+    }
 
-#nav-links a.active {
-    border-left: 4px solid var(--accent-color);
-    color: var(--secondary-text);
+    #nav-links a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--secondary-text);
+    }
+
+    #nav-links a.active {
+        border-left: 4px solid var(--accent-color);
+        color: var(--secondary-text);
+    }
+
+    nav .toggles #nav-links a {
+        display: block;
+        padding: 12px 20px;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 .hero-banner {
