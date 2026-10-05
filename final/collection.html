@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Switch: Platform to Exchange Puzzles</title>
+    <meta name="description"
+        content="Platform for people to contribute and select puzzles for a Final Project for WDD 231 class">
+    <meta name="author" content="Alana Fox">
+    <meta property="og:title" content="Puzzle Switch: Platform to Exchange Puzzles">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Site for individuals can join with other puzzle solvers to exchange puzzles">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:url" content="https://github.io">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Local Component Stylesheets -->
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-large.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Left Aligned Logo Group -->
+        <a href="main.html" class="logo">
+            <img src="images/favicon.svg" alt="Puzzle Switch Logo">
+            <span>Puzzle Switch</span>
+        </a>
+
+        <!-- Inline Desktop Text Navbar (hidden on mobile via CSS) -->
+        <nav>
+            <a href="main.html" class="active">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="form.html">Switch</a>
+        </nav>
+
+        <!-- Far Right Utilities Layout -->
+        <div class="header-utilities-container">
+            <!-- Hamburger Button extracted from header-controls so it never gets hidden on mobile -->
+            <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
+
+            <div class="header-controls">
+                <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+            </div>
+        </div>
+
+        <!-- Fullscreen Mobile Navigation Drawer (Added missing layout target) -->
+        <div class="mobile-nav-overlay">
+            <nav>
+                <a href="main.html" class="active">Home</a>
+                <a href="collection.html">Collection</a>
+                <a href="form.html">Switch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-banner collection-hero">
+            <img src="images/collection.png" alt="Puzzle Switch Logo Background Banner" class="banner-img">
+        </div>
+
+        <!-- Filters Interface Container -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="shapeFilter">Shape</label>
+                <select id="shapeFilter" onchange="filterPuzzles()">
+                    <option value="all">All Shapes</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="countFilter">Piece Count</label>
+                <select id="countFilter" onchange="filterPuzzles()">
+                    <option value="all">All Counts</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="typeFilter">Type</label>
+                <select id="typeFilter" onchange="filterPuzzles()">
+                    <option value="all">All Types</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ⚡ FIXED: Changed class="grid" to class="puzzle-grid" to match your responsive layers -->
+        <div id="puzzleGrid" class="puzzle-grid"></div>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Puzzle Switch</p>
+        <p>Alana Fox | WDD 231 Final Project</p>
+        <p><a href="attributions.html">Attributions</a></p>
+        <p>Project Video</p>
+    </footer>
+    <!-- Operational Event Logic Scripts -->
+
+
+</body>
+
+</html>

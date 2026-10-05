@@ -1,0 +1,101 @@
+/* ==========================================================================
+   DESKTOP MEDIA QUERY LAYER (Viewports 769px and Up)
+   ========================================================================== */
+@media (min-width: 769px) {
+
+    /* 1. Header Layout Shifts & Desktop Navigation */
+    header {
+        flex-direction: row;
+        padding: 15px 30px;
+        gap: 0;
+        text-align: left;
+    }
+
+    /* Hide mobile navigation drawer components entirely */
+    #menu-button,
+    .header-utilities-container,
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+
+    .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: var(--white);
+        font-family: var(--heading-font);
+        transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: var(--accent-color);
+    }
+
+    nav a.active {
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    .button-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* 2. Home Page Split Content Columns */
+    .intro-info-container,
+    .participate-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .intro-info-container img {
+        grid-column: 1;
+    }
+
+    .intro-info {
+        grid-column: 2;
+    }
+
+    .participate-text {
+        grid-column: 1;
+    }
+
+    .participate-container img {
+        grid-column: 2;
+    }
+
+    .intro-info-container img,
+    .participate-container img {
+        height: 400px;
+    }
+
+    .filters {
+        flex-direction: row !important;
+        /* Converts vertical mobile stack back into a single clean line */
+        justify-content: center !important;
+        gap: 2rem !important;
+    }
+
+    .filter-group,
+    .filter-group select {
+        width: auto !important;
+        /* Releases the full-width mobile constraint boundaries */
+    }
+
+    /* ⚡ RESTORES DESKTOP COLUMNS: Allows multiple cards to rest beautifully side-by-side on computers */
+    #puzzleGrid,
+    .puzzle-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+        padding: 2rem 0 !important;
+        width: 100% !important;
+    }
+
+}

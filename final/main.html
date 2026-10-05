@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Switch: Platform to Exchange Puzzles</title>
+    <meta name="description"
+        content="Platform for people to contribute and select puzzles for a Final Project for WDD 231 class">
+    <meta name="author" content="Alana Fox">
+    <meta property="og:title" content="Puzzle Switch: Platform to Exchange Puzzles">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Site for individuals can join with other puzzle solvers to exchange puzzles">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:url" content="https://github.io">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Local Component Stylesheets -->
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-large.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Left Aligned Logo Group -->
+        <a href="main.html" class="logo">
+            <img src="images/favicon.svg" alt="Puzzle Switch Logo">
+            <span>Puzzle Switch</span>
+        </a>
+
+        <!-- Inline Desktop Text Navbar (hidden on mobile via CSS) -->
+        <nav>
+            <a href="main.html" class="active">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="form.html">Switch</a>
+        </nav>
+
+        <!-- Far Right Utilities Layout -->
+        <div class="header-utilities-container">
+            <!-- Hamburger Button extracted from header-controls so it never gets hidden on mobile -->
+            <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
+            
+            <div class="header-controls">
+                <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+            </div>
+        </div>
+
+        <!-- Fullscreen Mobile Navigation Drawer (Added missing layout target) -->
+        <div class="mobile-nav-overlay">
+            <nav>
+                <a href="main.html" class="active">Home</a>
+                <a href="collection.html">Collection</a>
+                <a href="form.html">Switch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-banner">       
+            <img src="images/puzzle-switch.png" alt="Puzzle Switch Logo Background Banner" class="banner-img">
+        </div>
+
+        <section class="intro">
+            <div class="intro-info-container">
+                <img src="images/group.jpg" alt="Image of a group of people doing a puzzle" class="intro-img">
+                <div class="intro-info">
+                    <h1>Looking for the piece to complete you?</h1>
+                    <p>Creating puzzles is a fun activity but once completed leaves one looking for the next challenge.
+                        Puzzle switch connects together a community of puzzle makers to facilitate puzzle exchanges in a
+                        simple and convenient manner.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="participate">
+            <div class="participate-container">
+                <div class="participate-text">
+                    <h1>Puzzle Switching</h1>
+                    <p>We've solved the puzzle of finding and sharing pieces. Participate, Puzzle, and Switch.</p>
+                    <a href="form.html" class="cta-button">Piece It Out</a>
+                </div>
+                <img src="images/friends.jpg" alt="Image of friends doing a puzzle">
+            </div>
+        </section>
+
+<section class="featured-puzzles">
+    <!-- Centered section header wrapper -->
+    <div class="section-title-container">
+        <h2>Puzzle Options Search By:</h2>
+    </div>
+    
+
+    <div id="featured-puzzle-grid" class="puzzle-grid"></div>
+<div class="filter-controls">
+    <div class="filter-buttons">
+        <!-- Wrap each button in an anchor tag linking to collection.html with a query string -->
+        <a href="collection.html?filter=shape" class="filter-link">
+            <button class="filter-btn" data-criteria="shape" data-tooltip="Filter puzzle by piece shape grid, random, whimsy">Shape</button>
+        </a>
+
+        <a href="collection.html?filter=count" class="filter-link">
+            <button class="filter-btn" data-criteria="count" data-tooltip="Filter puzzle by number of pieces">Count</button>
+        </a>
+        
+        <a href="collection.html?filter=type" class="filter-link">
+            <button class="filter-btn" data-criteria="type" data-tooltip="Filter puzzles by 2D or 3D.">Type</button>
+        </a>        
+
+    </div>
+</div>    
+</section>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="current-year"></span> Puzzle Switch</p>
+        <p>Alana Fox | WDD 231 Final Project</p>
+        <p><a href="attributions.html">Attributions</a></p>
+        <p>Project Video</p>
+    </footer>
+
+    <!-- Operational Event Logic Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const navOverlay = document.querySelector('.mobile-nav-overlay');
+            const yearSpan = document.getElementById('current-year');
+
+            // Dynamic date injection for the footer copyright line
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Click listener handling drawer toggle triggers smoothly
+            if (menuButton && navOverlay) {
+                menuButton.addEventListener('click', () => {
+                    menuButton.classList.toggle('open');
+                    navOverlay.classList.toggle('open');
+                });
+
+                // Closes drawer interface automatically if link is clicked
+                navOverlay.querySelectorAll('nav a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuButton.classList.remove('open');
+                        navOverlay.classList.remove('open');
+                    });
+                });
+            }
+        });
+    </script>    
+</body>
+
+</html>

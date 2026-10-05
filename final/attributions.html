@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage for Final Project Puzzle Exchange</title>
+    <meta name="description" content="WDD231 final three page project main page to introduce puzzle themed pages for BYU Pathway.">
+    <meta name="author" content="Alana Fox">
+
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet Links -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Script Link -->
+    <script src="scripts/main.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <a href="home.html" class="logo">
+            <img src="images/puzzle-favicon.svg" alt="Puzzle site logo">
+            <span>Puzzle Switch</span>
+        </a>
+        <div class="header-controls">
+            <nav>
+                <a href="main.html">Home</a>
+                <a href="types.html">Pieces</a>
+                <a href="form.html">Switch</a>
+            </nav>
+            <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+        </div>
+        <button id="menu-button" aria-label="Open Navigation Menu"></button>
+    </header>
+
+    <main class="attributions-content">
+        <section class="page-intro">
+            <h1>Attributions</h1>
+            <p>This page acknowledges the sources of the content used on this website.</p>
+        </section>
+        
+        <section>
+            <h3>Content</h3>
+            <p>All written content was created specifically for this project.</p>
+        </section>
+        
+        <section>
+            <h3>Images</h3>
+            <p>All either created in canva by Student for this site  or are listed below </p>
+        </section>
+        
+        <section>
+            <h3>Icons</h3>
+            <p>The favicon and theme toggle icons (puzzles) were created for this project using SVG.</p>
+            <p>The hamburger menu icon is an SVG, adapted from common open-source icon sets.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="current-year"></span> Puzzle Switch</p>
+        <p>Alana Fox | WDD 231 Final Project</p>
+        <p><a href="attributions.html">Attributions</a></p>
+    </footer>
+</body>
+</html>

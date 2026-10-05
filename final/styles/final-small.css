@@ -1,0 +1,446 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & BASE RESET
+   ========================================================================== */
+:root {
+    --primary-color: #013328;
+    /* Dark Emerald Green */
+    --accent-color: #F8Cf7C;
+    /* Light Amber */
+    --bg-color: #E3DCD2;
+    /* Greige */
+    --text-color: #100C0D;
+    /* Black */
+    --white: #ffffff;
+    --surface-color: #ffffff;
+
+    --heading-font: Helvetica, Arial, sans-serif;
+    --body-font: Georgia, "Times New Roman", serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    padding: 10px;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHY
+   ========================================================================== */
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw + 1rem, 2rem);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   3. STRUCTURE, HEADER & MOBILE NAVIGATION
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1001;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-weight: bold;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Hide desktop menus inside mobile layouts */
+nav,
+.header-controls {
+    display: none;
+}
+
+/* Hamburger Target Toggle Button */
+#menu-button {
+    display: block !important;
+    background: transparent no-repeat center / contain;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F8Cf7C'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E");
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+#menu-button.open {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F8Cf7C'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+    transform: rotate(90deg);
+}
+
+/* Fullscreen Navigation Draw Overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mobile-nav-overlay.open {
+    display: flex;
+}
+
+.mobile-nav-overlay nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav-overlay nav a {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: var(--white);
+    font-weight: 700;
+    font-family: var(--heading-font);
+}
+
+.mobile-nav-overlay nav a:hover,
+.mobile-nav-overlay nav a.active {
+    color: var(--accent-color);
+}
+
+.mobile-nav-overlay #theme-toggle-button {
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   4. CONTENT CARDS & COMPONENT BLOCKS (Mobile Sizing Fixes)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.hero-banner {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+
+.intro,
+.participate {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.intro-info-container,
+.participate-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.intro-info-container img,
+.participate-container img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Home Page Options Layout Sub-headers */
+.featured-puzzles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.section-title-container {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.filter-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Consolidated Filtering Container Panel on Mobile */
+.filters {
+    display: flex !important;
+    flex-direction: column !important;
+    /* Stacks selectors vertically on mobile */
+    gap: 0.85rem !important;
+    padding: 1rem !important;
+    width: calc(100% - 20px) !important;
+    margin: 0 auto 2rem auto !important;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-group select {
+    width: 65% !important;
+    /* Balance select width boundaries nicely on phone widths */
+}
+
+/* ⚡ THE GRID WRAPPING FIX: Forces puzzle container elements to snap into 1 vertical column on small screens */
+.puzzle-grid,
+#puzzleGrid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 10px !important;
+    width: calc(100% - 20px) !important;
+    margin: 0 auto !important;
+}
+
+.puzzle-grid>div,
+.puzzle-grid .puzzle-card {
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    aspect-ratio: 1;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE CSS TOOLTIPS
+   ========================================================================== */
+.filter-btn {
+    position: relative;
+    background: url('images/puzzle-button.jpg') no-repeat center / cover;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filter-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+}
+
+.filter-btn:hover::before,
+.filter-btn:hover::after {
+    opacity: 1;
+}
+
+.filter-btn:hover::after {
+    transform: translateX(-50%) scale(1);
+}
+
+/* ==========================================================================
+   5. INTERACTIVE CSS TOOLTIPS & HOVER STATES
+   ========================================================================== */
+.filter-btn {
+    position: relative;
+    background: url('images/puzzle-button.jpg') no-repeat center / cover;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Tooltip Popup Bubble Window */
+.filter-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+/* Tooltip Context Indicator Triangle Arrow Pointer */
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+}
+
+/* Trigger Interactivity Mechanics */
+.filter-btn:hover::before,
+.filter-btn:hover::after {
+    opacity: 1;
+}
+
+.filter-btn:hover::after {
+    transform: translateX(-50%) scale(1);
+}
+
+/* ==========================================================================
+   6. MOBILE COLLECTION LAYOUT TARGETS (Small Screens Layer Only)
+   ========================================================================== */
+
+/* Consolidated filter strip adjustments on mobile phone screens */
+
+.filters {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+    width: calc(100% - 20px) !important;
+    margin: 0 auto 2rem auto !important;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filter-group select {
+    width: 65%;
+    /* Constrains element bounds cleanly on mobile device display panels */
+}
+
+/* ⚡ CONSOLIDATED CARD GRID FIX: Forces all puzzle showcase entries into a single-column layout stack */
+
+/* ⚡ FORCE 1 VERTICAL COLUMN: Prevents the basketball card from pushing side-to-side on mobile screen widths */
+#puzzleGrid,
+.puzzle-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 10px !important;
+    width: calc(100% - 20px) !important;
+}

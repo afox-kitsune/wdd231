@@ -1,0 +1,249 @@
+/* ==========================================================================
+   1. GLOBAL REUSABLE UI ELEMENTS & HEADER FIX
+   ========================================================================== */
+header {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 20px auto !important;
+    border-radius: 6px !important;
+    box-sizing: border-box !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #e5be6b;
+}
+
+#theme-toggle-button {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   2. FILTER INTERFACE BAR (Shared Cosmetics Only)
+   ========================================================================== */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    max-width: 1200px !important;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box !important;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--white);
+}
+
+.filter-group select {
+    padding: 0.4rem 1.5rem 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   3. PUZZLE SHOWCASE CARDS GRID (Shared Cosmetics Only)
+   ========================================================================== */
+#puzzleGrid,
+.puzzle-grid {
+    display: grid !important;
+    gap: 2rem !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.card {
+    background-color: var(--bg-color) !important;
+    border: 3px solid var(--primary-color) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-image-wrapper {
+    width: 100% !important;
+    height: 240px !important;
+    overflow: hidden !important;
+    background-color: #f1f5f9 !important;
+}
+
+.card-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+.card-content {
+    padding: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+.card-title {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+    margin: 0 0 0.25rem 0 !important;
+}
+
+.details p {
+    margin: 0.4rem 0 !important;
+    font-size: 0.95rem !important;
+    color: var(--primary-color) !important;
+}
+
+.details strong {
+    color: var(--primary-color) !important;
+}
+
+/* ==========================================================================
+   4. CHIP BADGES
+   ========================================================================== */
+.badge-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.badge {
+    display: inline-block !important;
+    padding: 0.25rem 0.6rem !important;
+    border-radius: 4px !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.badge-type {
+    background-color: #e4cccd !important;
+    color: #3f0112 !important;
+}
+
+.badge-shape {
+    background-color: #ffebcd !important;
+    color: #883300 !important;
+}
+
+.badge-level {
+    background-color: #b1ccc5 !important;
+    color: #123524 !important;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE HERO BANNER SYSTEM (Shared Cosmetics Only)
+   ========================================================================== */
+.hero-banner {
+    position: relative !important;
+    background-color: var(--primary-color) !important;
+    max-width: 1200px !important;
+    display: block !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    border-radius: 6px !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.hero-banner .banner-img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+    border: none !important;
+}
+
+.collection-hero .banner-img {
+    object-fit: contain !important;
+    object-position: left center !important;
+}
+
+/* ==========================================================================
+   6. CLEAN ARCHITECTURE FOOTER STYLING
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color) !important;
+    color: var(--white) !important;
+    padding: 2.5rem 1.5rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 3rem auto 0 auto !important;
+    border-radius: 6px 6px 0 0 !important;
+    box-sizing: border-box !important;
+}
+
+footer p {
+    font-family: var(--heading-font) !important;
+    font-size: 1.05rem !important;
+    color: var(--white) !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+footer a {
+    color: var(--white) !important;
+    text-decoration: underline !important;
+    transition: color 0.2s ease !important;
+}
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
