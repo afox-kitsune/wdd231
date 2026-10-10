@@ -95,7 +95,11 @@
         gap: 1.5rem;
     }
 
-    .filter-group,
+    .filter-group {
+        justify-content: flex-start;
+        width: auto;
+    }
+
     .filter-group select {
         width: auto;
     }
