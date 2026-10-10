@@ -5,12 +5,13 @@ function setupMobileMenu() {
     const overlay = document.querySelector('.mobile-nav-overlay');
 
     if (menuButton && overlay) {
-        menuButton.addEventListener('click', () => {
+        menuButton.addEventListener('click', (e) => {
+            e.preventDefault();
             overlay.classList.toggle('open');
             menuButton.classList.toggle('open');
         });
 
-        overlay.querySelectorAll('nav a').forEach(link => {
+        overlay.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menuButton.classList.remove('open');
                 overlay.classList.remove('open');
@@ -31,19 +32,17 @@ function setupFilterListeners() {
     const countFilter = document.getElementById('countFilter');
     const typeFilter = document.getElementById('typeFilter');
 
-
     if (shapeFilter) shapeFilter.addEventListener('change', filterPuzzles);
     if (countFilter) countFilter.addEventListener('change', filterPuzzles);
     if (typeFilter) typeFilter.addEventListener('change', filterPuzzles);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setupMobileMenu();
-    setupFooterYear();
+setupMobileMenu();
+setupFooterYear();
+setupFilterListeners();
 
-    setupFilterListeners();
+window.filterPuzzles = filterPuzzles;
 
-    window.filterPuzzles = filterPuzzles;
-
+if (document.getElementById('featured-puzzle-grid') || document.getElementById('puzzleGrid')) {
     loadPuzzles();
-});
+}

@@ -1,44 +1,53 @@
-@media (min-width: 769px) {
+@media screen and (min-width: 768px) {
 
-
-    header {
+    body header {
         flex-direction: row;
         padding: 15px 30px;
         gap: 0;
         text-align: left;
     }
 
-
-    #menu-button,
-    .header-utilities-container,
-    .mobile-nav-overlay {
-        display: none !important;
-    }
-
-    .header-controls {
+    body header .main-navigation {
         display: flex;
+        gap: 20px;
         align-items: center;
-        gap: 20px;
     }
 
-    nav {
-        display: flex;
-        gap: 20px;
-    }
-
-    nav a {
+    body header .main-navigation a {
         color: var(--white);
         font-family: var(--heading-font);
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-transform: uppercase;
         transition: color 0.2s ease;
     }
 
-    nav a:hover,
-    nav a.active {
+    body header .main-navigation a:hover,
+    body header .main-navigation a.active {
         color: var(--accent-color);
     }
 
-    nav a.active {
+    body header .main-navigation a.active {
         border-bottom: 2px solid var(--accent-color);
+    }
+
+
+    html body header .header-utilities-container #menu-button {
+        display: none;
+    }
+
+
+    body header .header-utilities-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+
+    body header .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
     .button-group {
@@ -46,6 +55,11 @@
         gap: 10px;
     }
 
+
+    .mobile-nav-overlay,
+    body .mobile-nav-overlay.open {
+        display: none;
+    }
 
     .intro-info-container,
     .participate-container {
@@ -85,6 +99,7 @@
     .filter-group select {
         width: auto;
     }
+
 
     #puzzleGrid,
     .puzzle-grid {

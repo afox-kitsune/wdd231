@@ -17,14 +17,22 @@
     <meta property="og:image:width" content="800">
     <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/collection.html">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
 
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-favicon.png">
 
+
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/final-small.css">
     <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
+
 
     <script src="scripts/main.js" type="module"></script>
 </head>
@@ -56,6 +64,7 @@
         </div>
 
         <div class="filters">
+            <h1 class="filter-h1">Search Puzzle Collection:</h1>
             <div class="filter-group">
                 <label for="shapeFilter">Shape</label>
                 <select id="shapeFilter" onchange="filterPuzzles()">

@@ -1,5 +1,5 @@
-const signupForm = document.querySelector("#signup-Form");
-const usernameInput = document.querySelector("#user-name");
+const signupForm = document.querySelector("#signup-form");
+const usernameInput = document.querySelector("#member-username");
 const fullNameInput = document.querySelector("#member-name");
 const emailInput = document.querySelector("#member-email");
 const locationInput = document.querySelector("#member-location");
@@ -18,7 +18,7 @@ const shippingAddressInput = document.querySelector("#shipping-address");
 const shippingMethodSelect = document.querySelector("#shipping-method");
 
 const costDisplay = document.querySelector("#calculatedCost");
-const requestsLogContainer = document.querySelector("#requestsLogContainer");
+const requestsLogContainer = document.querySelector("#requests-log-container");
 
 const shippingMethodRates = {
     "standard": 10.00,
@@ -169,7 +169,13 @@ function handleRequestSubmit(event) {
 if (shippingMethodSelect) {
     shippingMethodSelect.addEventListener("change", updateShippingEstimate);
 }
-
+if (requestForm) {
+    requestForm.addEventListener("reset", () => {
+        if (costDisplay) {
+            costDisplay.textContent = "$0.00";
+        }
+    });
+}
 
 if (requestsLogContainer) {
     requestsLogContainer.addEventListener("click", (event) => {

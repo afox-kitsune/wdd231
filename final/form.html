@@ -16,18 +16,25 @@
     <meta property="og:image:height" content="1600">
     <meta property="og:image:width" content="800">
     <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/form.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 
 
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/apple-touch-favicon.png">
 
+
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/final-small.css">
     <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
 
 
-    <script src="scripts/form.js" type="module"></script>
+    <script type="module" src="main.js"></script>
+    <script src="form.js"></script>
 </head>
 
 <body>
@@ -57,32 +64,31 @@
         </div>
         <div class="featured-puzzles">
             <div class="section-title-container">
-                <h1>Join the Puzzle Switch Community</h1>
+                <h1>Join our Puzzle Switch Community</h1>
                 <p>Become a member, share your collection, or request your next challenge.</p>
             </div>
         </div>
-
         <section class="form-section">
             <h2>1. Become a Member</h2>
-            <form id="signup-Form">
+            <form id="signup-form">
                 <div class="form-group">
-                    <label for="memberUsername">Username</label>
-                    <input type="text" id="user-name" name="name" required placeholder="The Piece Keeper">
+                    <label for="member-username">Username</label>
+                    <input type="text" id="member-username" name="username" required placeholder="The Piece Keeper">
                 </div>
                 <div class="form-group">
-                    <label for="memberFullname">Full Name</label>
+                    <label for="member-name">Full Name</label>
                     <input type="text" id="member-name" name="name" required placeholder="Joe Smith">
                 </div>
                 <div class="form-group">
-                    <label for="memberEmail">Email Address</label>
+                    <label for="member-email">Email Address</label>
                     <input type="email" id="member-email" name="email" required placeholder="jsmith@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="memberlocation">Location</label>
+                    <label for="member-location">Location</label>
                     <input type="text" id="member-location" name="location" required placeholder="Arizona">
                 </div>
                 <div class="form-group">
-                    <label for="memberPassword">Create Password</label>
+                    <label for="member-password">Create Password</label>
                     <input type="password" id="member-password" name="password" required minlength="8">
                 </div>
                 <button type="submit" class="submit-btn">Create Account</button>
@@ -111,7 +117,7 @@
                 <div class="form-group">
                     <label for="contribute-level">Level</label>
                     <select id="contribute-level" name="level" required>
-                        <option value="" disabled selected>Select a level</option>
+                        <option value="" disabled selected>Select a Level</option>
                         <option value="Easy">Easy</option>
                         <option value="Moderate">Moderate</option>
                         <option value="Difficult">Difficult</option>
@@ -126,7 +132,6 @@
                         <option value="whimsy">Whimsy</option>
                     </select>
                 </div>
-
                 <button type="submit" class="submit-btn">Submit Contribution</button>
             </form>
         </section>
@@ -158,24 +163,24 @@
                 </div>
                 <button type="submit" class="submit-btn">Place Puzzle Request</button>
             </form>
-        </section>
 
-        <div class="shipping-estimate-box">
-            <p>Estimated Shipping Cost: <strong id="calculatedCost">$0.00</strong></p>
-        </div>
-        <section class="form-section">
-            <h2>4. Your Pending Requests</h2>
-            <div id="requestsLogContainer">
+            <div class="shipping-estimate-box">
+                <p>Estimated Shipping Cost: <strong id="calculatedCost">$0.00</strong></p>
             </div>
         </section>
 
+        <section class="form-section">
+            <h2>4. Your Pending Requests</h2>
+            <div id="requests-log-container"></div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; <span id="current-year"></span> Puzzle Switch</p>
-        <p>Alana Fox | WDD 231 Final Project</p>
-        <p><a href="attributions.html">Attributions</a></p>
-        <p>Project Video</p>
-    </footer>
+</body>
+<footer>
+    <p>&copy; <span id="current-year"></span> Puzzle Switch</p>
+    <p>Alana Fox | WDD 231 Final Project</p>
+    <p><a href="attributions.html">Attributions</a></p>
+    <p>Project Video</p>
+</footer>
 
 
 </body>

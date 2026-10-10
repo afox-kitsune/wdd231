@@ -17,6 +17,12 @@
     <meta property="og:image:width" content="800">
     <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/main.html">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
 
     <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -25,6 +31,7 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/final-small.css">
     <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
+
 
     <script src="scripts/main.js" type="module"></script>
 </head>
@@ -35,6 +42,7 @@
             <img src="images/favicon.svg" alt="Puzzle Switch Logo">
             <span>Puzzle Switch</span>
         </a>
+
 
         <nav class="main-navigation">
             <a href="main.html" class="active">Home</a>
@@ -51,6 +59,14 @@
     </header>
 
 
+    <div class="mobile-nav-overlay">
+        <nav>
+            <a href="main.html" class="active">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="form.html">Switch</a>
+        </nav>
+    </div>
+
     <main>
         <div class="hero-banner">
             <img src="images/puzzle-switch.png" alt="Puzzle Switch Logo Background Banner" class="banner-img">
@@ -58,7 +74,7 @@
 
         <section class="intro">
             <div class="intro-info-container">
-                <img src="images/group.jpg" alt="Image of a group of people doing a puzzle" class="intro-img">
+                <img src="images/group.jpg" alt="A group of people doing a puzzle together" class="intro-img">
                 <div class="intro-info">
                     <h1>Looking for the piece to complete you?</h1>
                     <p>Creating puzzles is a fun activity but once completed leaves one looking for the next challenge.
@@ -71,77 +87,41 @@
         <section class="participate">
             <div class="participate-container">
                 <div class="participate-text">
-                    <h1>Puzzle Switching</h1>
+                    <h2>Puzzle Switching</h2>
                     <p>We've solved the puzzle of finding and sharing pieces. Participate, Puzzle, and Switch.</p>
                     <a href="form.html" class="cta-button">Piece It Out</a>
                 </div>
-                <img src="images/friends.jpg" alt="Image of friends doing a puzzle">
+                <img src="images/friends.jpg" alt="Friends laughing and collaborating on a jigsaw puzzle">
             </div>
         </section>
 
         <section class="featured-puzzles">
-            <!-- Centered section header wrapper -->
             <div class="section-title-container">
-                <h2>Puzzle Options Search By:</h2>
+                <h3>Puzzle Options Search By:</h3>
             </div>
 
-
             <div id="featured-puzzle-grid" class="puzzle-grid"></div>
+
             <div class="filter-controls">
                 <div class="filter-buttons">
-                    <!-- Wrap each button in an anchor tag linking to collection.html with a query string -->
-                    <a href="collection.html?filter=shape" class="filter-link">
-                        <button class="filter-btn" data-criteria="shape"
-                            data-tooltip="Filter puzzle by piece shape grid, random, whimsy">Shape</button>
-                    </a>
-
-                    <a href="collection.html?filter=count" class="filter-link">
-                        <button class="filter-btn" data-criteria="count"
-                            data-tooltip="Filter puzzle by number of pieces">Count</button>
-                    </a>
-
-                    <a href="collection.html?filter=type" class="filter-link">
-                        <button class="filter-btn" data-criteria="type"
-                            data-tooltip="Filter puzzles by 2D or 3D.">Type</button>
-                    </a>
-
+                    <a href="collection.html?filter=shape" class="filter-btn" data-criteria="shape"
+                        data-tooltip="Filter puzzle by piece shape grid, random, whimsy">Shape</a>
+                    <a href="collection.html?filter=count" class="filter-btn" data-criteria="count"
+                        data-tooltip="Filter puzzle by number of pieces">Count</a>
+                    <a href="collection.html?filter=type" class="filter-btn" data-criteria="type"
+                        data-tooltip="Filter puzzles by 2D or 3D.">Type</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy;<span id="current-year"></span> Puzzle Switch</p>
+        <p>&copy; <span id="current-year"></span> Puzzle Switch</p>
         <p>Alana Fox | WDD 231 Final Project</p>
         <p><a href="attributions.html">Attributions</a></p>
         <p>Project Video</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('menu-button');
-            const navOverlay = document.querySelector('.mobile-nav-overlay');
-            const yearSpan = document.getElementById('current-year');
-
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
-
-            if (menuButton && navOverlay) {
-                menuButton.addEventListener('click', () => {
-                    menuButton.classList.toggle('open');
-                    navOverlay.classList.toggle('open');
-                });
-
-                navOverlay.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuButton.classList.remove('open');
-                        navOverlay.classList.remove('open');
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
