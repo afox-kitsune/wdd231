@@ -1,27 +1,24 @@
+
+import { puzzleData } from './puzzles.js';
+
 let puzzles = [];
 
-// 1. Fetch data from the local JSON engine
 export async function loadPuzzles() {
     try {
-        const response = await fetch('/final/data/puzzles.json');   
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        puzzles = await response.json();
+        puzzles = puzzleData;
 
         setupFilters();
         displayPuzzles(puzzles);
     } catch (error) {
-        console.error("Could not fetch puzzle data:", error);
+        console.error("Could not load puzzle collection:", error);
         const grid = document.getElementById('puzzleGrid');
         if (grid) {
-            grid.innerHTML = `<p class="no-results" style="color: #ef4444;">Error loading puzzle data. Please ensure you are using a local server.</p>`;
+            grid.innerHTML = `<p class="no-results" style="color: #013328;">Error loading puzzle collection.</p>`;
         }
     }
 }
 
-// 2. Populate Filter Selection Options Dynamically
+
 function setupFilters() {
     const shapes = new Set();
     const counts = new Set();
@@ -42,7 +39,7 @@ function populateSelect(id, items) {
     const select = document.getElementById(id);
     if (!select) return;
 
-    // Reset old items except the default 'All' choice
+
     select.innerHTML = `<option value="all">All ${id.replace('Filter', 's')}</option>`;
 
     items.forEach(item => {
@@ -53,7 +50,7 @@ function populateSelect(id, items) {
     });
 }
 
-// 3. Render Puzzles Component Cards Into DOM Grid Interface
+
 export function displayPuzzles(items) {
     const grid = document.getElementById('puzzleGrid');
     if (!grid) return;
@@ -91,7 +88,7 @@ export function displayPuzzles(items) {
     });
 }
 
-// 4. Runtime Filtering System State Process Matching Action
+
 export function filterPuzzles() {
     const shapeEl = document.getElementById('shapeFilter');
     const countEl = document.getElementById('countFilter');

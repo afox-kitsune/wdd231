@@ -1,4 +1,4 @@
-[
+export const puzzleData = [
     {
         "id": 1,
         "theme": "Sport",
@@ -164,4 +164,4 @@
         "shape": "grid",
         "location": "Florida"
     }
-]
+];
