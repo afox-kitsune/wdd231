@@ -4,8 +4,8 @@
     --bg-color: #e3dcd2;
     --text-color: #100c0d;
     --white: #ffffff;
-    --heading-font: "Montserrat", Helvetica, Arial, sans-serif;
-    --body-font: "Playfair Display", Georgia, "Times New Roman", serif;
+    --heading-font: "Montserrat", sans-serif;
+    --body-font: "Montserrat", sans-serif;
 }
 
 * {
