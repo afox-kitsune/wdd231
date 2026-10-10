@@ -12,52 +12,41 @@
     <meta property="og:type" content="website">
     <meta property="og:description"
         content="Site for individuals can join with other puzzle solvers to exchange puzzles">
-    <meta property="og:image" content="https://github.io">
-    <meta property="og:url" content="https://github.io">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/final/images/Screenshot-collection.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/collection.html">
 
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="icon" href="images/favicon.ico" sizes="any">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-favicon.png">
 
-    <!-- Local Component Stylesheets -->
-    <link rel="stylesheet" href="styles/final-small.css">
-    <link rel="stylesheet" href="styles/final-large.css">
     <link rel="stylesheet" href="styles/components.css">
-    <script src="scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
+
+    <script src="scripts/main.js" type="module"></script>
 </head>
 
 <body>
     <header>
-        <!-- Left Aligned Logo Group -->
         <a href="main.html" class="logo">
             <img src="images/favicon.svg" alt="Puzzle Switch Logo">
             <span>Puzzle Switch</span>
         </a>
 
-        <!-- Inline Desktop Text Navbar (hidden on mobile via CSS) -->
-        <nav>
-            <a href="main.html" class="active">Home</a>
-            <a href="collection.html">Collection</a>
+        <nav class="main-navigation">
+            <a href="main.html">Home</a>
+            <a href="collection.html" class="active">Collection</a>
             <a href="form.html">Switch</a>
         </nav>
 
-        <!-- Far Right Utilities Layout -->
         <div class="header-utilities-container">
-            <!-- Hamburger Button extracted from header-controls so it never gets hidden on mobile -->
             <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
-
             <div class="header-controls">
                 <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
             </div>
-        </div>
-
-        <!-- Fullscreen Mobile Navigation Drawer (Added missing layout target) -->
-        <div class="mobile-nav-overlay">
-            <nav>
-                <a href="main.html" class="active">Home</a>
-                <a href="collection.html">Collection</a>
-                <a href="form.html">Switch</a>
-            </nav>
         </div>
     </header>
 
@@ -66,7 +55,6 @@
             <img src="images/collection.png" alt="Puzzle Switch Logo Background Banner" class="banner-img">
         </div>
 
-        <!-- Filters Interface Container -->
         <div class="filters">
             <div class="filter-group">
                 <label for="shapeFilter">Shape</label>
@@ -88,7 +76,6 @@
             </div>
         </div>
 
-        <!-- ⚡ FIXED: Changed class="grid" to class="puzzle-grid" to match your responsive layers -->
         <div id="puzzleGrid" class="puzzle-grid"></div>
     </main>
     <footer>
@@ -97,7 +84,6 @@
         <p><a href="attributions.html">Attributions</a></p>
         <p>Project Video</p>
     </footer>
-    <!-- Operational Event Logic Scripts -->
 
 
 </body>

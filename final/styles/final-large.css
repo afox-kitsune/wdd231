@@ -1,9 +1,6 @@
-/* ==========================================================================
-   DESKTOP MEDIA QUERY LAYER (Viewports 769px and Up)
-   ========================================================================== */
 @media (min-width: 769px) {
 
-    /* 1. Header Layout Shifts & Desktop Navigation */
+
     header {
         flex-direction: row;
         padding: 15px 30px;
@@ -11,7 +8,7 @@
         text-align: left;
     }
 
-    /* Hide mobile navigation drawer components entirely */
+
     #menu-button,
     .header-utilities-container,
     .mobile-nav-overlay {
@@ -49,7 +46,7 @@
         gap: 10px;
     }
 
-    /* 2. Home Page Split Content Columns */
+
     .intro-info-container,
     .participate-container {
         grid-template-columns: repeat(2, 1fr);
@@ -77,25 +74,57 @@
         height: 400px;
     }
 
+
     .filters {
-        flex-direction: row !important;
-        /* Converts vertical mobile stack back into a single clean line */
-        justify-content: center !important;
-        gap: 2rem !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
     }
 
     .filter-group,
     .filter-group select {
-        width: auto !important;
-        /* Releases the full-width mobile constraint boundaries */
+        width: auto;
     }
 
-    /* ⚡ RESTORES DESKTOP COLUMNS: Allows multiple cards to rest beautifully side-by-side on computers */
     #puzzleGrid,
     .puzzle-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
-        padding: 2rem 0 !important;
-        width: 100% !important;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 2rem;
+        width: 100%;
     }
 
+    .form-section,
+    .shipping-table-container {
+        max-width: 650px;
+        margin: 2.5rem auto;
+        padding: 2.5rem;
+        border: 2px solid var(--primary-color);
+        box-shadow: 0 8px 24px rgba(1, 51, 40, 0.08);
+    }
+
+    .form-section h2 {
+        font-size: 1.6rem;
+        border-bottom: 2px solid var(--bg-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .shipping-estimate-box {
+        width: 100%;
+        max-width: 650px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+
+    .request-log-card {
+        padding: 1.5rem;
+    }
+
+    .delete-request-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
 }

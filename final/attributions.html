@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage for Final Project Puzzle Exchange</title>
-    <meta name="description" content="WDD231 final three page project main page to introduce puzzle themed pages for BYU Pathway.">
+    <title>Puzzle Switch: Platform to Exchange Puzzles</title>
+    <meta name="description"
+        content="Platform for people to contribute and select puzzles for a Final Project for WDD 231 class">
     <meta name="author" content="Alana Fox">
+    <meta property="og:title" content="Puzzle Switch: Platform to Exchange Puzzles">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Site for individuals can join with other puzzle solvers to exchange puzzles">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/final/images/Screenshot-main.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/main.html">
 
-    <!-- Favicon Links -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <!-- Google Fonts Links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-favicon.png">
 
-    <!-- Stylesheet Links -->
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/components.css">
-    
-    <!-- Script Link -->
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
+
     <script src="scripts/main.js" type="module"></script>
 </head>
+
 <body>
     <header>
-        <a href="home.html" class="logo">
-            <img src="images/puzzle-favicon.svg" alt="Puzzle site logo">
+        <a href="main.html" class="logo">
+            <img src="images/favicon.svg" alt="Puzzle Switch Logo">
             <span>Puzzle Switch</span>
         </a>
-        <div class="header-controls">
-            <nav>
-                <a href="main.html">Home</a>
-                <a href="types.html">Pieces</a>
-                <a href="form.html">Switch</a>
-            </nav>
-            <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+
+        <nav class="main-navigation">
+            <a href="main.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="form.html">Switch</a>
+
+        </nav>
+
+        <div class="header-utilities-container">
+            <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
+            <div class="header-controls">
+                <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+            </div>
         </div>
-        <button id="menu-button" aria-label="Open Navigation Menu"></button>
     </header>
 
     <main class="attributions-content">
@@ -47,21 +56,21 @@
             <h1>Attributions</h1>
             <p>This page acknowledges the sources of the content used on this website.</p>
         </section>
-        
+
         <section>
             <h3>Content</h3>
             <p>All written content was created specifically for this project.</p>
         </section>
-        
+
         <section>
             <h3>Images</h3>
-            <p>All either created in canva by Student for this site  or are listed below </p>
+            <p>All images created with Canva AI tool </p>
         </section>
-        
+
         <section>
             <h3>Icons</h3>
             <p>The favicon and theme toggle icons (puzzles) were created for this project using SVG.</p>
-            <p>The hamburger menu icon is an SVG, adapted from common open-source icon sets.</p>
+            <p> Hamburger Icon sourced from Google Material icons</p>
         </section>
     </main>
 
@@ -71,4 +80,5 @@
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
 </body>
+
 </html>

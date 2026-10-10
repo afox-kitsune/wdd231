@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Switch: Platform to Exchange Puzzles</title>
+    <meta name="description"
+        content="Platform for people to contribute and select puzzles for a Final Project for WDD 231 class">
+    <meta name="author" content="Alana Fox">
+    <meta property="og:title" content="Puzzle Switch: Platform to Exchange Puzzles">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+        content="Site for individuals can join with other puzzle solvers to exchange puzzles">
+    <meta property="og:image" content="https://afox-kitsune.github.io/wdd231/final/images/Screenshot-form.png">
+    <meta property="og:image:height" content="1600">
+    <meta property="og:image:width" content="800">
+    <meta property="og:url" content="https://afox-kitsune.github.io/wdd231/final/form.html">
+
+
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-favicon.png">
+
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-large.css" media="(min-width: 768px)">
+
+
+    <script src="scripts/form.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <a href="main.html" class="logo">
+            <img src="images/favicon.svg" alt="Puzzle Switch Logo">
+            <span>Puzzle Switch</span>
+        </a>
+
+        <nav class="main-nav-bar">
+            <a href="main.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="form.html" class="active">Switch</a>
+        </nav>
+
+        <div class="header-utilities-container">
+            <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
+            <div class="header-controls">
+                <button id="theme-toggle-button" aria-label="Toggle Dark Mode"></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-banner collection-hero">
+            <img src="images/switch.png" alt="Puzzle Switch Logo Background Banner" class="banner-img">
+        </div>
+        <div class="featured-puzzles">
+            <div class="section-title-container">
+                <h1>Join the Puzzle Switch Community</h1>
+                <p>Become a member, share your collection, or request your next challenge.</p>
+            </div>
+        </div>
+
+        <section class="form-section">
+            <h2>1. Become a Member</h2>
+            <form id="signup-Form">
+                <div class="form-group">
+                    <label for="memberUsername">Username</label>
+                    <input type="text" id="user-name" name="name" required placeholder="The Piece Keeper">
+                </div>
+                <div class="form-group">
+                    <label for="memberFullname">Full Name</label>
+                    <input type="text" id="member-name" name="name" required placeholder="Joe Smith">
+                </div>
+                <div class="form-group">
+                    <label for="memberEmail">Email Address</label>
+                    <input type="email" id="member-email" name="email" required placeholder="jsmith@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="memberlocation">Location</label>
+                    <input type="text" id="member-location" name="location" required placeholder="Arizona">
+                </div>
+                <div class="form-group">
+                    <label for="memberPassword">Create Password</label>
+                    <input type="password" id="member-password" name="password" required minlength="8">
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h2>2. Contribute a Puzzle</h2>
+            <form id="contribute-form">
+                <div class="form-group">
+                    <label for="contribute-title">Puzzle Theme</label>
+                    <input type="text" id="contribute-title" name="title" required placeholder="e.g., Holiday">
+                </div>
+                <div class="form-group">
+                    <label for="contribute-pieces">Piece Count</label>
+                    <input type="number" id="contribute-pieces" name="pieces" required placeholder="e.g., 500">
+                </div>
+                <div class="form-group">
+                    <label for="contribute-type">Type</label>
+                    <select id="contribute-type" name="type" required>
+                        <option value="" disabled selected>Select a Type</option>
+                        <option value="2D">2D</option>
+                        <option value="3D">3D</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contribute-level">Level</label>
+                    <select id="contribute-level" name="level" required>
+                        <option value="" disabled selected>Select a level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Difficult">Difficult</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contribute-shape">Shape</label>
+                    <select id="contribute-shape" name="shape" required>
+                        <option value="" disabled selected>Select piece shape</option>
+                        <option value="grid">Grid</option>
+                        <option value="random">Random</option>
+                        <option value="whimsy">Whimsy</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Contribution</button>
+            </form>
+        </section>
+
+        <section class="form-section">
+            <h2>3. Request a Puzzle</h2>
+            <form id="request-form">
+                <div class="form-group">
+                    <label for="request-selection">Desired Challenge Level</label>
+                    <select id="request-selection" name="request-type" required>
+                        <option value="" disabled selected>What Challenge Level?</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Difficult">Difficult</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shipping-address">Shipping Address</label>
+                    <input type="text" id="shipping-address" name="address" required
+                        placeholder="123 4th Place Mesa, AZ 56789">
+                </div>
+                <div class="form-group">
+                    <label for="shipping-method">Preferred Shipping Method</label>
+                    <select id="shipping-method" name="method" required>
+                        <option value="standard">Standard Ground (3-5 Days)</option>
+                        <option value="expedited">Expedited (2 Days)</option>
+                        <option value="overnight">Overnight Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Place Puzzle Request</button>
+            </form>
+        </section>
+
+        <div class="shipping-estimate-box">
+            <p>Estimated Shipping Cost: <strong id="calculatedCost">$0.00</strong></p>
+        </div>
+        <section class="form-section">
+            <h2>4. Your Pending Requests</h2>
+            <div id="requestsLogContainer">
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Puzzle Switch</p>
+        <p>Alana Fox | WDD 231 Final Project</p>
+        <p><a href="attributions.html">Attributions</a></p>
+        <p>Project Video</p>
+    </footer>
+
+
+</body>
+
+</html>

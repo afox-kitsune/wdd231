@@ -1,18 +1,10 @@
-/* ==========================================================================
-   1. GLOBAL VARIABLES & BASE RESET
-   ========================================================================== */
 :root {
     --primary-color: #013328;
-    /* Dark Emerald Green */
-    --accent-color: #F8Cf7C;
-    /* Light Amber */
-    --bg-color: #E3DCD2;
-    /* Greige */
-    --text-color: #100C0D;
-    /* Black */
+    --accent-color: #f8cf7c;
+    --bg-color: #e3dcd2;
+    --text-color: #100c0d;
     --white: #ffffff;
     --surface-color: #ffffff;
-
     --heading-font: Helvetica, Arial, sans-serif;
     --body-font: Georgia, "Times New Roman", serif;
 }
@@ -31,9 +23,6 @@ body {
     padding: 10px;
 }
 
-/* ==========================================================================
-   2. TYPOGRAPHY
-   ========================================================================== */
 h1,
 h2,
 h3 {
@@ -63,9 +52,6 @@ a {
     text-decoration: none;
 }
 
-/* ==========================================================================
-   3. STRUCTURE, HEADER & MOBILE NAVIGATION
-   ========================================================================== */
 header {
     background-color: var(--primary-color);
     color: var(--white);
@@ -97,13 +83,13 @@ header {
     margin: 0;
 }
 
-/* Hide desktop menus inside mobile layouts */
+
 nav,
 .header-controls {
     display: none;
 }
 
-/* Hamburger Target Toggle Button */
+
 #menu-button {
     display: block !important;
     background: transparent no-repeat center / contain;
@@ -111,17 +97,17 @@ nav,
     width: 30px;
     height: 30px;
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F8Cf7C'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f8cf7c'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E");
     z-index: 1001;
     transition: transform 0.3s ease;
 }
 
 #menu-button.open {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F8Cf7C'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f8cf7c'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
     transform: rotate(90deg);
 }
 
-/* Fullscreen Navigation Draw Overlay */
+
 .mobile-nav-overlay {
     display: none;
     position: fixed;
@@ -163,16 +149,15 @@ nav,
     margin-top: 2rem;
 }
 
-/* ==========================================================================
-   4. CONTENT CARDS & COMPONENT BLOCKS (Mobile Sizing Fixes)
-   ========================================================================== */
+
 main {
-    max-width: 1200px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 .hero-banner {
     grid-column: 1 / -1;
@@ -183,6 +168,7 @@ main {
     width: 100%;
     height: auto;
 }
+
 
 .intro,
 .participate {
@@ -204,25 +190,34 @@ main {
     height: 280px;
     object-fit: cover;
     object-position: center;
-    border-radius: 8px;
     border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-/* Home Page Options Layout Sub-headers */
+.cta-button {
+    display: block;
+    width: max-content;
+    margin: 0 auto 20px auto;
+    border: 2px solid var(--primary-color);
+}
+
+
 .featured-puzzles {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     grid-column: 1 / -1;
-    margin-top: 20px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .section-title-container {
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 20px;
 }
+
+/*collection*/
 
 .filter-controls {
     display: flex;
@@ -235,20 +230,21 @@ main {
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
     width: 100%;
 }
 
-/* Consolidated Filtering Container Panel on Mobile */
 .filters {
-    display: flex !important;
-    flex-direction: column !important;
-    /* Stacks selectors vertically on mobile */
-    gap: 0.85rem !important;
-    padding: 1rem !important;
-    width: calc(100% - 20px) !important;
-    margin: 0 auto 2rem auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: calc(100% - 20px);
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-bottom: 1px solid #ddd;
+    border-radius: 6px;
 }
 
 .filter-group {
@@ -258,189 +254,287 @@ main {
     width: 100%;
 }
 
-.filter-group select {
-    width: 65% !important;
-    /* Balance select width boundaries nicely on phone widths */
-}
-
-/* ⚡ THE GRID WRAPPING FIX: Forces puzzle container elements to snap into 1 vertical column on small screens */
-.puzzle-grid,
-#puzzleGrid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    padding: 1.5rem 10px !important;
-    width: calc(100% - 20px) !important;
-    margin: 0 auto !important;
-}
-
-.puzzle-grid>div,
-.puzzle-grid .puzzle-card {
-    background-color: var(--white);
-    border: 1px solid #ccc;
-    aspect-ratio: 1;
-    border-radius: 6px;
-}
-
-/* ==========================================================================
-   5. INTERACTIVE CSS TOOLTIPS
-   ========================================================================== */
-.filter-btn {
-    position: relative;
-    background: url('images/puzzle-button.jpg') no-repeat center / cover;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-family: var(--heading-font);
-    font-size: 1rem;
-    border: 2px solid var(--primary-color);
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.filter-btn::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.85);
-    background-color: var(--primary-color);
+.filter-group label {
+    font-size: 0.9rem;
     color: var(--white);
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: normal;
-    line-height: 1.4;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 100;
-}
-
-.filter-btn::before {
-    content: "";
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: var(--primary-color);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 100;
-}
-
-.filter-btn:hover::before,
-.filter-btn:hover::after {
-    opacity: 1;
-}
-
-.filter-btn:hover::after {
-    transform: translateX(-50%) scale(1);
-}
-
-/* ==========================================================================
-   5. INTERACTIVE CSS TOOLTIPS & HOVER STATES
-   ========================================================================== */
-.filter-btn {
-    position: relative;
-    background: url('images/puzzle-button.jpg') no-repeat center / cover;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-family: var(--heading-font);
-    font-size: 1rem;
-    border: 2px solid var(--primary-color);
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-/* Tooltip Popup Bubble Window */
-.filter-btn::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.85);
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: normal;
-    line-height: 1.4;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 100;
-}
-
-/* Tooltip Context Indicator Triangle Arrow Pointer */
-.filter-btn::before {
-    content: "";
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: var(--primary-color);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 100;
-}
-
-/* Trigger Interactivity Mechanics */
-.filter-btn:hover::before,
-.filter-btn:hover::after {
-    opacity: 1;
-}
-
-.filter-btn:hover::after {
-    transform: translateX(-50%) scale(1);
-}
-
-/* ==========================================================================
-   6. MOBILE COLLECTION LAYOUT TARGETS (Small Screens Layer Only)
-   ========================================================================== */
-
-/* Consolidated filter strip adjustments on mobile phone screens */
-
-.filters {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.75rem !important;
-    padding: 1rem !important;
-    width: calc(100% - 20px) !important;
-    margin: 0 auto 2rem auto !important;
-}
-
-.filter-group {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 
 .filter-group select {
     width: 65%;
-    /* Constrains element bounds cleanly on mobile device display panels */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--white);
 }
 
-/* ⚡ CONSOLIDATED CARD GRID FIX: Forces all puzzle showcase entries into a single-column layout stack */
 
-/* ⚡ FORCE 1 VERTICAL COLUMN: Prevents the basketball card from pushing side-to-side on mobile screen widths */
 #puzzleGrid,
 .puzzle-grid {
-    grid-template-columns: 1fr !important;
-    padding: 1.5rem 10px !important;
-    width: calc(100% - 20px) !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 1.5rem 10px;
+}
+
+.puzzle-grid>div,
+.puzzle-grid .puzzle-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.puzzle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.puzzle-info {
+    padding: 1rem;
+    text-align: left;
+}
+
+.puzzle-info h3 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.puzzle-info p {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.4;
+    margin: 4px 0;
+}
+
+
+.filter-btn {
+    position: relative;
+    background: url('images/puzzle-button.jpg') no-repeat center / cover;
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+.filter-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    width: 220px;
+    padding: 10px 14px;
+    transform: translateX(-50%) scale(0.85);
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--primary-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+}
+
+.filter-btn:hover::before,
+.filter-btn:hover::after {
+    opacity: 1;
+}
+
+.filter-btn:hover::after {
+    transform: translateX(-50%) scale(1);
+}
+
+/*form*/
+
+.form-section,
+.shipping-table-container {
+    background-color: var(--surface-color);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.form-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--text-color);
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+
+.shipping-estimate-box {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 1.5rem auto;
+    width: calc(100% - 20px);
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.shipping-estimate-box p {
+    margin: 0;
+    font-family: var(--heading-font);
+}
+
+#calculatedCost {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+.request-log-card {
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.card-header h3 {
+    margin: 0;
+}
+
+.request-log-card p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.request-log-card small {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+}
+
+
+.delete-request-btn {
+    position: static;
+    white-space: nowrap;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.delete-request-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
 }
